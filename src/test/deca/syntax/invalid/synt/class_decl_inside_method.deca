@@ -1,0 +1,12 @@
+/*
+    Description: Declaration d'une classe au sein d'une methode
+
+    Résultat : erreur syntaxique deca:8:8
+*/
+class A{
+    void x(){
+        class y{
+        }
+    }
+}
+// @expected_output deca:8:8

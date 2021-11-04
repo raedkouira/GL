@@ -1,0 +1,15 @@
+/*
+    Description : Test si la comparaison entre entier et flottant est reconnue
+
+    Résultat : OK
+*/
+{
+    5 == 10.5;
+    5 >= 10.5;
+    5 <= 10.5;
+    5 < 10.5;
+    5 > 10.5;
+    5 != 10.5;
+}
+// @expected_tree unknown
+

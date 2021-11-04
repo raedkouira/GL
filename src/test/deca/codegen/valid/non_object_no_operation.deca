@@ -1,0 +1,7 @@
+// @result
+/*
+Testing for no operation instruction
+*/
+{
+;
+}

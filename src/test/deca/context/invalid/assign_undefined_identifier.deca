@@ -1,0 +1,10 @@
+/*
+    Description : Tests sur l'assignation d'un entier avec une variable qui n'existe pas encore
+
+    Résultat : erreur renvoyée
+*/
+{
+    int x = y;
+    int y = 5;
+}
+// @expected_output deca:7:12: Undefined identifier y

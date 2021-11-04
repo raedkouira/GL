@@ -1,0 +1,8 @@
+/*
+    Description : Déclaration d'une classe avec un attribut
+
+    Résultat : OK
+*/
+class A{
+    int b;
+}

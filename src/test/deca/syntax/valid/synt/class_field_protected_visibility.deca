@@ -1,0 +1,11 @@
+/*
+    Description: Test sur la déclaration d'un attribut de classe avec la visibilité protected
+
+    Résultat : OK
+*/
+class C{
+    protected int x;
+}
+
+{
+}

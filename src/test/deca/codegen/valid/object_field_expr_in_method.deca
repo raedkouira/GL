@@ -1,0 +1,23 @@
+// @result 2
+// @result 2.20000e+00
+// @result ok
+/*
+Testing for field usage as operand in method
+*/
+class X {
+        int a = 1;
+        float b = 1.1;
+        boolean c = true;
+
+        void func() {
+        	println(1 + a);
+		println(1.1 + b);
+		if (c && true) {
+			println("ok");
+		}
+	}
+}
+{
+        X x = new X();
+        x.func();
+}

@@ -1,0 +1,49 @@
+// @result 1
+// @result 1.10000e+00
+// @result ok
+// @result 1
+// @result 1.10000e+00
+// @result ok
+// @result 1
+// @result ok
+// @result ok
+/*
+Testing for multiple arguments in method calls
+*/
+class D {
+	int x = 1;
+	void func() {
+		println("ok");
+	}
+}
+class X {
+	int a = 1;
+	float b = 1.1;
+	boolean c = true;
+	D d = new D();
+	void func() {
+		println("ok");
+	}
+}
+class Y {
+	void func(int arg1, float arg2, boolean arg3, X arg4) {
+		println(arg1);
+		println(arg2);
+		if (arg3) {
+			println("ok");
+		}
+		println(arg4.a);
+		println(arg4.b);
+		if (arg4.c) {
+			println("ok");
+		}
+		println(arg4.d.x);
+		arg4.d.func();
+		arg4.func();
+	}
+}
+{
+	X x = new X();
+	Y y = new Y();
+	y.func(1, 1.1, true, x);
+}

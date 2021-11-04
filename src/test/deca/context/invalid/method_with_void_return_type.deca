@@ -1,0 +1,9 @@
+/*
+    Description : Test sur la gestion de l'instruction return pour une fonction de type void
+
+    Resultat : Erreur contextuelle (regle 3.24, deca:7:13)
+*/
+class A{
+    void x(){return void;}
+}
+// @expected_output deca:7:13

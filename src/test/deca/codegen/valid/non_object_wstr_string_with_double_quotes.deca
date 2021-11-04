@@ -1,0 +1,10 @@
+// @result Chaine valide en "Deca", test reussi si le mot Deca affiche avant est entre double quotes
+/*
+    Description: Affichage d'une chaine de caractère contenant des "
+
+    Résultat : à définir...
+*/
+
+{
+    println("Chaine valide en \"Deca\", test reussi si le mot Deca affiche avant est entre double quotes");
+}

@@ -1,0 +1,10 @@
+/*
+    Description : paramètre de type void dans une méthode
+
+    Résultat : Erreur contextuelle
+*/
+class A{
+    void x(void y){
+
+    }
+}

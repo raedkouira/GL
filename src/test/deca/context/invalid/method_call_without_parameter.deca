@@ -1,0 +1,14 @@
+/*
+    Description : Appel d'une méthode bien définie sans son paramètre
+
+    Résultat : erreur contextuelle (deca:10:8)
+*/
+class A{
+    void x(int a){}
+    
+    void y(){
+        x();
+    }
+}
+// @expected_output deca:10:8
+

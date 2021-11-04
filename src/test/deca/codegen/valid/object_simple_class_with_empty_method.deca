@@ -1,0 +1,9 @@
+/*
+    Description : Classe contenant une méthode vide
+
+    Résultat : OK
+*/
+class A{
+    void b(){
+    }
+}

@@ -1,0 +1,10 @@
+/*
+    Description : Test sur la gestion du symbole - sur des booléens
+
+    Résultat : erreur contextuelle (cf poly papier page 8 : type_unary_op)
+*/
+{
+    boolean x = -true;
+}
+// @expected_output deca:7:17: Invalid type for operand -: boolean instead of int or float
+

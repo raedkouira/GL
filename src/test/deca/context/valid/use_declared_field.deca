@@ -1,0 +1,12 @@
+/*
+    Description : Utilisation d'un champ qui existe
+
+    Résultat : OK
+*/
+class A{
+    int y = 5;
+    void x(){
+        println(y);
+    }
+}
+

@@ -1,0 +1,9 @@
+/*
+    Description : Test pour voir si un identifiant comprenant un accent est refusé
+
+    Résultat : Erreur renvoyée (deca:7:15: token recognition error at: 'é')
+*/
+{
+    int identité;
+}
+// @expected_output deca:7:15: token recognition error at: 'é'

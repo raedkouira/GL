@@ -1,0 +1,16 @@
+// @result ok
+// @result ok
+{
+	boolean x = true;
+        if (x) {
+                println("ok");
+        } else {
+                println("ko");
+        }
+	x = false;
+        if (x) {
+                println("ko");
+        } else {
+                println("ok");
+        }
+}

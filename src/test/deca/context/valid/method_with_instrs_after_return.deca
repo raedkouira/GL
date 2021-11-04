@@ -1,0 +1,24 @@
+// @result 5
+// @result 12
+// @result 10
+/*
+    Description : Méthode ayant des instructions après l'instruction return
+
+    Résultat : OK
+*/
+class A{
+    int x = 5;
+    int y(){
+        x = 10;
+        return 12;
+        x = 15;
+    }
+}
+{
+    A a = new A();
+
+    println(a.x);
+    println(a.y());
+    println(a.x);
+}
+        

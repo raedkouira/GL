@@ -1,0 +1,13 @@
+/*
+    Description : Retour dans une méthode de type void
+
+    Résultat: Erreur contextuelle (deca:11:8);
+*/
+class A
+{
+    int x = 5;
+
+    void t(){
+        return x;
+    }
+}

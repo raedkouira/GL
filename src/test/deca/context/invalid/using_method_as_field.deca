@@ -1,0 +1,12 @@
+/*
+    Description : Utilisation d'une méthode en tant qu'attribut
+
+    Résultat: Erreur contextuelle (deca:8:12)
+*/
+class A{
+    int x (){
+        return 1;
+    }
+    int y = x;
+}
+// @expected_output deca:8:12

@@ -1,0 +1,18 @@
+// @result 5
+/*
+    Description : Test sur l'initialisation d'un int en tenant compte de la superclasse (cf p211 4.3)
+
+    Résultat: OK (cf poly p212 4.3)
+
+*/
+class A{
+    int x = 5;
+}
+class C extends A{
+  //  int x; // x DOIT VALOIR 5
+}
+{
+    C p = new C();
+    
+    println(p.x);
+}

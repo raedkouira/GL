@@ -1,0 +1,8 @@
+/*
+    Description : utilisation de this comme identificateur
+
+    Résultat : Erreur syntaxique
+*/
+{
+    int this = 5;
+}

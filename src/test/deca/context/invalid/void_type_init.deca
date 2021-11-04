@@ -1,0 +1,9 @@
+/*
+    Description : Tests sur l'assignation d'un entier avec une variable qui n'existe pas encore
+
+    Résultat : erreur renvoyée
+*/
+{
+    void x;
+}
+// @expected_output deca:7:4: Variable cannot be of type void

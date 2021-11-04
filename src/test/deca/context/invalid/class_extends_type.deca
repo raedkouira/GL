@@ -1,0 +1,7 @@
+/*
+    Description : Classe qui étends un type et non une classe
+
+    Résultat : erreur contextuelle (deca:6:0)
+*/
+class C extends int{}
+// @expected_output deca:6:0

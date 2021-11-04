@@ -1,0 +1,4 @@
+{
+String x = 3 + 4;
+}
+// @expected_output deca:2:11: Rvalue is of type int and leftOperand is of type String

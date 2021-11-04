@@ -1,0 +1,40 @@
+// @result 1
+// @result 1.10000e+00
+// @result ok
+// @result ok
+// @result ok
+/*
+Testing for basic method inheritance, with no redefinition
+*/
+class D {}
+class X {
+	int a() {
+		return 1;
+	}
+	float b() {
+		return 1.1;
+	}
+	boolean c() {
+		return true;
+	}
+	D d() {
+		return new D();
+	}
+	void e() {
+		println("ok");
+	}
+}
+class Y extends X {}
+{
+	Y y = new Y();
+
+	println(y.a());
+	println(y.b());
+	if (y.c()) {
+		println("ok");
+	}
+	if (y.d() != null) {
+		println("ok");
+	}
+	y.e();
+}

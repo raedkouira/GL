@@ -1,0 +1,10 @@
+// @expected_output deca:9:8:
+/*
+    Description : Test sur un if sans accolades
+    
+    Résultat : rejeté à l'analyse syntaxique
+*/
+{
+    if (true)
+        println("Test échoué !");
+]

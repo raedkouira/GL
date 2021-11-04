@@ -1,0 +1,7 @@
+// @expected_output deca:7:0:
+{
+
+
+
+print("bonjour")
+}

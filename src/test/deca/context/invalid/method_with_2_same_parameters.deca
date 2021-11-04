@@ -1,0 +1,9 @@
+/*
+    Description : Test sur la gestion de l'utilisation du meme parametre en double
+
+    Resultat : Erreur contextuelle (regle 3.12, deca:7:18)
+*/
+class A{
+    void x(int y, int y){}
+}
+// @expected_output deca:7:18

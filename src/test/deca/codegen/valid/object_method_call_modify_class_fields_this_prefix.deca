@@ -1,0 +1,24 @@
+// @result 32
+// @result 30
+// @result 2
+/*
+    Description : Modification des attributs de la classe avec un appel de méthode en utilisant le préfixe this
+
+    Résultat : OK
+*/
+class A{
+    int x = 1;
+    int z = 30;
+    int y = 2;
+
+    void a(){
+        this.x = this.y+this.z;
+    }
+}
+{
+    A i = new A();
+    i.a();
+    println(i.x);
+    println(i.z);
+    println(i.y);
+}

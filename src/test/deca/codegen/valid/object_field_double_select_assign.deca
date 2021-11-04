@@ -1,0 +1,34 @@
+// @result 1
+// @result 1.10000e+00
+// @result ok
+// @result ok
+/* 
+Testing for multiple selection
+*/
+class A{}
+class X {
+	int a;
+	float b;
+	boolean c;
+	A d;
+}
+class Y {
+	X x = new X();
+}
+{
+	Y y = new Y();
+	
+	y.x.a = 1;
+	y.x.b = 1.1;
+	y.x.c = true;
+	y.x.d = new A();
+
+	println(y.x.a);
+	println(y.x.b);
+	if (y.x.c) {
+		println("ok");
+	}
+	if (y.x.d != null) {
+		println("ok");
+	} 
+}

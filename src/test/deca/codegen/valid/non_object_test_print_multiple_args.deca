@@ -1,0 +1,4 @@
+// @result Test33.00000e+00
+{
+	print("Test", 3, 3.0);
+}

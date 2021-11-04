@@ -1,0 +1,4 @@
+{
+boolean x = "a" && 1 > 4;
+}
+// @expected_output deca:2:12: Invalid type for left operand: String instead of boolean

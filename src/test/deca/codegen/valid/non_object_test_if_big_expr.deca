@@ -1,0 +1,10 @@
+// @result ok
+{
+	int x = 3;
+	int z = 2;
+	if (((x > 2) && ((z < 1) || false)) || (x+z)*3 > (1-5)) {
+		print("ok");
+	} else {
+		print("ko");
+	}
+} 

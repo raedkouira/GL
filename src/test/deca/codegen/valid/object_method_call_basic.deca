@@ -1,0 +1,30 @@
+// @result 1
+// @result 1.10000e+00
+// @result ok
+// @result ok
+/*
+Testing simple method call
+*/
+class X {
+	int a() {
+		return 1;
+	}
+	float b() {
+		return 1.1;
+	}
+	boolean c() {
+		return true;
+	}
+	void d() {
+		println("ok");
+	} 
+}
+{
+	X x = new X();
+	println(x.a());
+	println(x.b());
+	if (x.c()) {
+		println("ok");
+	}
+	x.d();	
+}

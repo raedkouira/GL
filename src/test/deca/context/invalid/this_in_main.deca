@@ -1,0 +1,9 @@
+/*
+    Description : Utilisation de this dans le main
+
+    Résultat : Erreur contextuelle
+*/
+{
+    int x = 5;
+    int y = this.x;
+}

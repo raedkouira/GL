@@ -1,0 +1,13 @@
+/*
+    Description : Accès à un attribut protégé en dehors d'une sous classe
+
+    Résultat : Erreur contextuelle
+*/
+class B{
+    protected int u;
+}
+class A{
+    B p = new B();
+
+    int a = p.u;
+}

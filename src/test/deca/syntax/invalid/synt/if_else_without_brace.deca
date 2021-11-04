@@ -1,0 +1,12 @@
+// @expected_output deca:11:8: no viable alternative at input 'elseprintln'
+/*
+    Description : Test sur un else sans accolades
+    
+    Résultat : rejeté à l'analyse syntaxique
+*/
+{
+    if (true){
+        
+    }else
+        println();
+}

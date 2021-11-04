@@ -1,0 +1,6 @@
+
+{
+    x ||| y;
+}
+
+// @expected_output deca:3:8: token recognition error

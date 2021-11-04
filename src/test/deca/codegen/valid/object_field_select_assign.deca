@@ -1,0 +1,31 @@
+// @result 1
+// @result 1.10000e+00
+// @result ok
+// @result ok
+/*
+Test for field selection manipulation : assignment and usage in expressions
+*/
+class A {}
+class X {
+	int a;
+	float b;
+	boolean c;
+	A d;
+}
+{
+	X x = new X();
+	
+	x.a = 1;
+	x.b = 1.1;
+	x.c = true;
+	x.d = new A();
+
+	println(x.a);
+        println(x.b);
+        if (x.c) {
+                println("ok");
+        }
+        if (x.d != null) {
+                println("ok");
+        }
+}

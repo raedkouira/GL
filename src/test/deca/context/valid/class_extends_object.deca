@@ -1,0 +1,6 @@
+/*
+    Description : Classe qui étends la classe Object
+
+    Résultat : OK
+*/
+class C extends Object{}

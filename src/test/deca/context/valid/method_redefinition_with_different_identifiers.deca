@@ -1,0 +1,11 @@
+/*
+    Description : redéfinition d'une méthode en modifiant les types
+
+    Résultat : OK
+*/
+class B{
+    void x(int a, int b){}
+}
+class A extends B{
+    void x(int aa, int bb){}
+}

@@ -1,0 +1,11 @@
+// @result Test réussi si toute la phrase est sur la même ligne
+/*
+    Description : test pour voir si l'affichage d'une chaine longue fonctionne
+
+    Résultat : à définir
+*/
+
+{
+    print("Test réussi");
+    print(" si toute la phrase est sur la même ligne");
+}

@@ -1,0 +1,190 @@
+// Grenoble INP - Ensimag projet GL -*- mode: java -*-
+// Library for class Math of Deca, coded in Deca
+
+/* This file contains the best method we've found  for
+   each specified function, we've used other methods but
+   they are less effective, check the documentation to
+   see them                                              */
+
+class Math {
+
+	// 32 bits constants
+
+	float _2pi = 6.2831855f;
+	float pi = 3.1415927f;
+	float pi2 = 1.5707964f;
+	float pi4 = 0.7853982f;
+	float zMach = 1.1920929E-7;
+
+    /* stops the program */
+    void _throwError() asm("HALT");
+
+	/* Not asked but will be useful later */
+	float _sqrt(float f) {
+        int i;
+        float x;
+		if (f < 0) {
+			println("illegal parameter for sqrt, parameter must be positive, exiting...");
+            _throwError();
+		} else {
+			i = 0;
+			x = 0.1f;
+			// check the documentation to understand the '15'
+			while (i < 15) {
+				x = (0.5f) * (x + (f / x));
+				i = i + 1;
+			}
+			return x;
+		}
+	}
+
+	/* Not asked but will be useful later */
+	float _moduloF(float f, float p) {
+		/* returns f mod p i.e. the only number x that is between 0 & p
+		   such that f = k * p + x with k an integer */
+
+		if (f < 0) {
+            f = -f;
+		}
+
+        while(f >= p) {
+			f = f - p;
+		}
+		return f;
+	}
+
+    float _sinPI4(float f) {
+
+    // computes the sinus function between 0 & PI / 4
+    float a = -1.0/5040;
+    float b = 1.0/120;
+    float c = -1.0/6;
+    float d = 1.0;
+
+    return ((((a*f*f+b)*f*f+c)*f*f)+d)*f;
+  }
+
+
+float _cosPI4(float f) {
+
+    // computes the cosinus function between 0 & PI / 4
+    float a = 1.0/40320;
+    float b = -1.0/720;
+    float c = 1.0/24;
+    float d = -1.0/2;
+
+    return ((((a*f*f+b)*f*f+c)*f*f)+d)*f*f+1;
+  }
+
+	float _sinPI2(float f) {
+		// computes the sinus function between 0 & PI / 2
+		if (f > pi4) {
+			return _cosPI4(pi2 - f);
+		} else {
+			return _sinPI4(f);
+		}
+	}
+
+	float _cosPI2(float f) {
+		// computes the sinus function between 0 & PI / 2
+		if (f > pi4) {
+			return _sinPI4(pi2 - f);
+		} else {
+			return _cosPI4(f);
+		}
+	}
+
+	float sin(float f) {
+		// computes the sinus of a float
+		float sign = 1.0;
+
+
+		if (f < 0) {
+			f = -f;
+			sign = -1 * sign;
+		}
+
+		// f = f % 2*pi
+		f = _moduloF(f, _2pi);
+		// now f is < 2*pi
+		if (f > pi) {
+			f = f - pi;
+			sign = -1 * sign;
+		}
+
+		// now f is < pi
+		if (f > pi2) {
+			return sign * _cosPI2(f - pi2);
+		}
+		return sign * _sinPI2(f);
+	}
+
+	float cos(float f) {
+		/* computes the cosinus of a float using
+		      the formula cos(x) = sin(x + pi/2) */
+		return sin(f + pi2);
+	}
+
+	float atan(float f) {
+		/* computes the atan function using the newton method, in a nutshell,
+		   the sequence u(n+1) = u(n) + cos²(u(n))(x - tan(u(n))) --> arctan(x) */
+		float outp = 0.0;
+        int i = 0;
+		float cosValue, sinValue;
+		if (f < 0) {
+			return -atan(-f);
+		} else if (f > 1) {
+			// arctan(f) + arctan(1/f) = sign(f) * pi / 2
+			// here sign(f) > 0 since f > 0
+
+			return pi2 - atan(1 / f);
+		} else {
+			// it is probably possible use a smaller integer instead of 10
+			while (i < 10) {
+                // this way we do not have to compute cosinus twice
+				sinValue = sin(outp);
+				cosValue = cos(outp);
+				outp = outp + cosValue * (cosValue * f - sinValue);
+                i = i + 1;
+			}
+			return outp;
+		}
+	}
+
+	float asin(float f) {
+		/* computes the asin using the formula
+		   asin(f) = atan(f / sqrt(1 - f²))    */
+		if (f < -1 || f > 1) {
+			println("illegal parameter : asin can only be computed for numbers within (-1, 1), exiting...");
+            _throwError();
+		} else if (f == -1) {
+			return -pi2;
+		} else if (f == 1) {
+			return pi2;
+		} else {
+			return atan(f / _sqrt(1 - f * f));
+		}
+	}
+
+	float ulp(float f) {
+		/* computes the ulp of a float */
+		float tmp = 1.0;
+
+		if (f < 0) {
+			return ulp(-f);
+		} else if (1.0 < f && f < 2.0) {
+			return zMach * tmp;
+		} else if (f < 1.0) {
+			while (f < 1.0) {
+				f = f * 2;
+				tmp = tmp / 2;
+			}
+		} else {
+			while (f > 2.0) {
+				f = f / 2;
+				tmp = tmp * 2;
+			}
+		}
+		return tmp * zMach;
+	}
+}

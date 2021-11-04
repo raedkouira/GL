@@ -1,0 +1,20 @@
+// @result Test reussi
+/*
+    Description : Test sur l'initialisation d'un flottant (cf p211 4.3)
+
+    Résultat: OK (cf poly p212 4.3)
+
+*/
+class C{
+    float x; // vaut 0.0
+    float y = x + x; // y DOIT VALOIR 0.0 (0.0+0.0) 
+}
+{
+    C d = new C();
+
+    if (d.y == 0.0){
+        println("Test reussi");
+    }else{
+        println("Test echoue");
+    }
+}

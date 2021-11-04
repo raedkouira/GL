@@ -1,0 +1,11 @@
+/*
+    Description : Séparation avec une nouvelle ligne
+
+    Résultat : OK
+*/
+{
+    int
+    a
+    =
+    1;
+}

@@ -1,0 +1,10 @@
+/*
+    Description : paramètre du même nom que la méthode appelante
+
+    Résultat : OK
+*/
+class A{
+    void x(int x){
+    
+    }
+}

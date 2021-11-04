@@ -1,0 +1,7 @@
+class Test {
+    int x = 2;
+
+    void affiche() {
+        print(this.x);
+    }
+}

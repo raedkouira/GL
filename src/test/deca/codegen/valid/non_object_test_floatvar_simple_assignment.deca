@@ -1,0 +1,9 @@
+// @result 3.45000e+00
+// @result 2.71300e+00
+{
+	float x;
+	float y = 2.713;
+	x = 3.45;
+	println(x);
+	println(y);
+}

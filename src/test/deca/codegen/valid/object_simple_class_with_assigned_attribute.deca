@@ -1,0 +1,8 @@
+/*
+    Description : Classe avec un attribut affecté
+
+    Résultat : OK
+*/
+class A{
+    int u = 1;
+}

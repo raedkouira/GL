@@ -1,0 +1,18 @@
+// @result Error: Stack overflow
+/*
+    Description : Appel récursifs sans fin
+
+    Résultat : Erreur contextuelle
+*/
+
+class A{
+    int u = 0;
+    int x(){
+        return x();
+    }
+}
+{
+    A p = new A();
+    p.x();
+}
+    

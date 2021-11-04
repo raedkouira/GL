@@ -1,0 +1,6 @@
+/*
+    Description : Test sur une déclaration de classe vide
+
+    Résultat : OK
+*/
+class A{}

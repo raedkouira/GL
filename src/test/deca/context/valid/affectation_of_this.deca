@@ -1,0 +1,8 @@
+/*
+    Description : Affectation de this à une variable de même classe que this
+
+    Résultat: OK
+*/
+class B{
+    B p = this;
+}

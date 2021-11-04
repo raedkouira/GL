@@ -1,0 +1,8 @@
+/*
+    Description: Déclaration de plusieurs attributs de classes à la suite
+
+    Résultat : OK
+*/
+class A{
+    int x, y, z;
+}

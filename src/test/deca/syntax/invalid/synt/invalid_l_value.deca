@@ -1,0 +1,9 @@
+/*
+    Description : utilisateur d'une valeur invalide en tant que lvalue
+
+    Résultat : erreur syntaxique
+*/
+{
+    int x = 2;
+    1 = x;
+}

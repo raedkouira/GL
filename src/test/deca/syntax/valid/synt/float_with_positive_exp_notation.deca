@@ -1,0 +1,8 @@
+/*
+    Description : Nombre flottant avec une notation exponentielle positive
+
+    Résultat : OK
+*/
+{
+    float x = 0.5E+5;
+}

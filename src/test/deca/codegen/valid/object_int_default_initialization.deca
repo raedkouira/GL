@@ -1,0 +1,19 @@
+// @result Test reussi
+/*
+    Description : Test sur l'initialisation d'un entier (cf p211 4.3)
+
+    Résultat: OK (cf poly p212 4.3)
+
+*/
+class C{
+    int x; // vaut 0
+    int y = x + x; // y DOIT VALOIR 0 (0+0) 
+}
+{
+    C p = new C();
+    if (p.y == 0){
+        println("Test reussi");
+    }else{
+        println("Test echoue");
+    }
+}

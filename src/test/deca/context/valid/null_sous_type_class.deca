@@ -1,0 +1,9 @@
+/*
+    Description : Affectation de this à une variable de la superclasse
+
+    Résultat: OK
+*/
+class B{
+    Object p = null;
+}
+

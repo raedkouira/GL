@@ -1,0 +1,6 @@
+/*
+    Description : classe qui n'étends rien
+
+    Résultat : OK
+*/
+class A {}

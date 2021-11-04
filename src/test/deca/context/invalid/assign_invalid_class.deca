@@ -1,0 +1,13 @@
+/*
+    Description : Assignation d'une classe déclarée mais d'un surtype
+
+    Résultat : erreur contextuelle (deca:11:8) (cf poly papier page 7 : "assign_compatible")
+*/
+class A{}
+
+class B extends A{}
+
+class C{
+    B p = new A();
+}
+// @expected_output deca:11:

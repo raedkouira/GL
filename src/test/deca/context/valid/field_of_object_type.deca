@@ -1,0 +1,11 @@
+/*
+    Description : Test sur la gestion d'un champ de type Object
+
+    Résultat : OK
+*/
+class A
+{
+    Object b;
+}
+// @expected_tree unknown
+

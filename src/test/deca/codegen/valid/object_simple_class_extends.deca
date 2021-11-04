@@ -1,0 +1,9 @@
+/*
+    Description : Extension d'une classe qui a un attribut
+
+    Résultat : OK
+*/
+class A{
+    int j;
+}
+class B extends A{}

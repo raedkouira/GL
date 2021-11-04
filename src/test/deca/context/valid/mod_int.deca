@@ -1,0 +1,10 @@
+/*
+    Description : Test si l'application d'un modulo à des nombres entiers est reconnue
+
+    Résultat : OK
+*/
+{
+    int x = 5 % 10;
+}
+// @expected_tree unknown
+

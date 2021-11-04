@@ -1,0 +1,10 @@
+// @expected_output deca:8:12: value cannot be stored as an integer value
+/*
+    Description : Test sur la gestion de l'overflow d'une somme de 2 entiers eux même en overflow
+
+    Résultat : A définir...
+*/
+{
+    println(5000000000+5000000000);
+    //println("Si il est affiché au dessus 1410065408, test échoué !");
+}

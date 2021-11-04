@@ -1,0 +1,10 @@
+/*
+    Description : Méthode avec un parametre de type void
+
+    Résultat : erreur contextuelle (deca:7:11)
+*/
+class A{
+    void x(void y){}
+}
+// @expected_output deca:7:11
+

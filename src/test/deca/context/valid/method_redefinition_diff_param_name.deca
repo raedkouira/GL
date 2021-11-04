@@ -1,0 +1,13 @@
+/*
+    Description : Redefinition de methode avec des identifier differents
+
+    Résultat : OK (p14 du poly papier, regle decl_param, Identifier est synthetise avec le marquage _)
+*/
+class A{
+    void x(int y){}
+}
+
+class D extends A{
+    void x(int z){}
+}
+

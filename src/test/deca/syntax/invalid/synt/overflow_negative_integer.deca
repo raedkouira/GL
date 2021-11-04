@@ -1,0 +1,9 @@
+// @expected_output deca:8:13:
+/*
+    Description : Initialisation d'un int avec une valeur trop petite
+
+    Résultat : OK
+*/
+{
+    int x = -4500000000;
+}

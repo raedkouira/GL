@@ -1,0 +1,57 @@
+// @result ok
+// @result ok
+// @result ok
+// @result ok
+// @result ok
+// @result ok
+// @result ok
+// @result ok
+{
+	if (false || false) {
+		println("ko");
+	} else {
+		println("ok");
+	}
+
+	if (false || true) {
+		println("ok");
+	} else {
+		println("ko");
+	}
+	
+	if (true || false) {
+		println("ok");
+	} else {
+		println("ko");
+	}
+	
+	if (true || true) {
+		println("ok");
+	} else {
+		println("ko");
+	}
+
+	if (!(false || false)) {
+		println("ok");
+	} else {
+		println("ko");
+	}
+
+	if (!(false || true)) {
+		println("ko");
+	} else {
+		println("ok");
+	}
+	
+	if (!(true || false)) {
+		println("ko");
+	} else {
+		println("ok");
+	}
+	
+	if (!(true || true)) {
+		println("ko");
+	} else {
+		println("ok");
+	}
+}

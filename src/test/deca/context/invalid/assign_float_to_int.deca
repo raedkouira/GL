@@ -1,0 +1,9 @@
+/*
+    Description : Assignation d'un flottant à un entier
+
+    Résultat : Erreur contextuelle (p7 poly papier "assign_compatible")
+*/
+{
+    int x = 3.5;
+}
+// @expected_output deca:7:12: Rvalue is of type float and leftOperand is of type int (3.28)

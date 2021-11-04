@@ -1,0 +1,27 @@
+{
+    int x;
+    if (true) {
+         x = 1;
+    } else {
+        x = 2;
+    }
+}
+// @expected_tree `> [1, 0] Program
+// @expected_tree    +> ListDeclClass [List with 0 elements]
+// @expected_tree    `> [1, 0] Main
+// @expected_tree       +> ListDeclVar [List with 1 elements]
+// @expected_tree       |  []> [2, 8] DeclVar
+// @expected_tree       |      +> [2, 4] Identifier (int)
+// @expected_tree       |      +> [2, 8] Identifier (x)
+// @expected_tree       |      `> NoInitialization
+// @expected_tree       `> ListInst [List with 1 elements]
+// @expected_tree          []> [3, 4] IfThenElse
+// @expected_tree              +> [3, 8] BooleanLiteral (true)
+// @expected_tree              +> ListInst [List with 1 elements]
+// @expected_tree              |  []> [4, 9] Assign
+// @expected_tree              |      +> [4, 9] Identifier (x)
+// @expected_tree              |      `> [4, 13] Int (1)
+// @expected_tree              `> ListInst [List with 1 elements]
+// @expected_tree                 []> [6, 8] Assign
+// @expected_tree                     +> [6, 8] Identifier (x)
+// @expected_tree                     `> [6, 12] Int (2)

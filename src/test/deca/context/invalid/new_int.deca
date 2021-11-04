@@ -1,0 +1,9 @@
+/*
+    Description : Utilisation de l'opérateur new avec int au lieu du nom d'une classe
+
+    Résultat: Erreur contextuelle (deca:7:12) (règle 3.42)
+*/
+class B{
+    int p = new int();
+}
+// @expected_output deca:7:12

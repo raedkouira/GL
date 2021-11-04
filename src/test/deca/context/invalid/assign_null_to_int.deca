@@ -1,0 +1,12 @@
+/*
+    Description : Assignation de null à un entier
+
+    Résultat : OK
+*/
+class A{
+    int x;
+
+    int r(){
+        x = null;
+    }
+}

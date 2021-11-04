@@ -1,0 +1,18 @@
+// @result Test reussi 100 -100 
+/*
+    Description : test sur un conditionnelle if else
+
+    Résultat : à définir...
+*/
+{
+    int x = 0;
+    int y;
+    while (x < 100){
+        x = x + 1;
+    }
+    y = x;
+    while (y > -100){
+        y = y - 1;
+    }
+    println("Test reussi ", x, " ", y);
+}

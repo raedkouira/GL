@@ -1,0 +1,13 @@
+/*
+    Description : Appel d'une méthode bien définie
+
+    Résultat : OK 
+*/
+class A{
+    void x(){}
+    
+    void y(){
+        x();
+    }
+}
+

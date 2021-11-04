@@ -1,0 +1,20 @@
+{
+boolean x = 1 > 4;
+}
+// @expected_tree `> [1, 0] Program
+// @expected_tree    +> ListDeclClass [List with 0 elements]
+// @expected_tree    `> [1, 0] Main
+// @expected_tree       +> ListDeclVar [List with 1 elements]
+// @expected_tree       |  []> [2, 8] DeclVar
+// @expected_tree       |      +> [2, 0] Identifier (boolean)
+// @expected_tree       |      |  definition: type (builtin), type=boolean
+// @expected_tree       |      +> [2, 8] Identifier (x)
+// @expected_tree       |      |  definition: variable defined at [2, 8], type=boolean
+// @expected_tree       |      `> [2, 12] Initialization
+// @expected_tree       |         `> [2, 12] Greater
+// @expected_tree       |            type: boolean
+// @expected_tree       |            +> [2, 12] Int (1)
+// @expected_tree       |            |  type: int
+// @expected_tree       |            `> [2, 16] Int (4)
+// @expected_tree       |               type: int
+// @expected_tree       `> ListInst [List with 0 elements]

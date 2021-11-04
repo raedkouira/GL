@@ -1,0 +1,8 @@
+/*
+    Description : extension de plusieurs classes
+
+    Résultat : erreur syntaxique
+*/
+class A{}
+class B{}
+class C extends A,B{}

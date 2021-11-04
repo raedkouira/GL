@@ -1,0 +1,11 @@
+// @result -524304
+/*
+    Description : Test sur la gestion de la multiplication d'un entier positif et d'un entier négatif entrainant un overflow
+    
+    Résultat : A définir...
+*/
+
+{
+    println(65540*-65540);
+    //println("Si il est affiché au dessus -524304, test probablement réussi !");
+}

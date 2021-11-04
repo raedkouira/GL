@@ -1,0 +1,87 @@
+/*
+    Description : Test sur la gestion de constructions multiples else if
+
+    Résultat : OK
+*/
+{
+    boolean x = true;
+    boolean y = true;
+    if (x) {
+        x = false;
+    } else if (false) {
+        y = false;
+    } else if (false){
+        if (true){
+            y = true;
+        }else{
+            y = false;
+        }
+    } else if (false){
+        y = false;
+    } else {
+        x = true;
+    }
+    
+}
+// @expected_tree `> [6, 0] Program
+// @expected_tree    +> ListDeclClass [List with 0 elements]
+// @expected_tree    `> [6, 0] Main
+// @expected_tree       +> ListDeclVar [List with 2 elements]
+// @expected_tree       |  []> [7, 12] DeclVar
+// @expected_tree       |  ||  +> [7, 4] Identifier (boolean)
+// @expected_tree       |  ||  +> [7, 12] Identifier (x)
+// @expected_tree       |  ||  `> [7, 14] Initialization
+// @expected_tree       |  ||     `> [7, 16] BooleanLiteral (true)
+// @expected_tree       |  []> [8, 12] DeclVar
+// @expected_tree       |      +> [8, 4] Identifier (boolean)
+// @expected_tree       |      +> [8, 12] Identifier (y)
+// @expected_tree       |      `> [8, 14] Initialization
+// @expected_tree       |         `> [8, 16] BooleanLiteral (true)
+// @expected_tree       `> ListInst [List with 1 elements]
+// @expected_tree          []> [9, 4] IfThenElse
+// @expected_tree              +> [9, 8] Identifier (x)
+// @expected_tree              +> ListInst [List with 1 elements]
+// @expected_tree              |  []> [10, 8] Assign
+// @expected_tree              |      +> [10, 8] Identifier (x)
+// @expected_tree              |      `> [10, 12] BooleanLiteral (false)
+// @expected_tree              `> ListInst [List with 4 elements]
+// @expected_tree                 []> [11, 6] IfThenElse
+// @expected_tree                 ||  +> [11, 15] BooleanLiteral (false)
+// @expected_tree                 ||  +> ListInst [List with 1 elements]
+// @expected_tree                 ||  |  []> [12, 8] Assign
+// @expected_tree                 ||  |      +> [12, 8] Identifier (y)
+// @expected_tree                 ||  |      `> [12, 12] BooleanLiteral (false)
+// @expected_tree                 ||  `> ListInst [List with 0 elements]
+// @expected_tree                 []> [13, 6] IfThenElse
+// @expected_tree                 ||  +> [13, 15] BooleanLiteral (false)
+// @expected_tree                 ||  +> ListInst [List with 1 elements]
+// @expected_tree                 ||  |  []> [14, 8] IfThenElse
+// @expected_tree                 ||  |      +> [14, 12] BooleanLiteral (true)
+// @expected_tree                 ||  |      +> ListInst [List with 1 elements]
+// @expected_tree                 ||  |      |  []> [15, 12] Assign
+// @expected_tree                 ||  |      |      +> [15, 12] Identifier (y)
+// @expected_tree                 ||  |      |      `> [15, 16] BooleanLiteral (true)
+// @expected_tree                 ||  |      `> ListInst [List with 1 elements]
+// @expected_tree                 ||  |         []> [16, 9] IfThenElse
+// @expected_tree                 ||  |             +> [14, 12] BooleanLiteral (true)
+// @expected_tree                 ||  |             +> ListInst [List with 0 elements]
+// @expected_tree                 ||  |             `> ListInst [List with 1 elements]
+// @expected_tree                 ||  |                []> [17, 12] Assign
+// @expected_tree                 ||  |                    +> [17, 12] Identifier (y)
+// @expected_tree                 ||  |                    `> [17, 16] BooleanLiteral (false)
+// @expected_tree                 ||  `> ListInst [List with 0 elements]
+// @expected_tree                 []> [19, 6] IfThenElse
+// @expected_tree                 ||  +> [19, 15] BooleanLiteral (false)
+// @expected_tree                 ||  +> ListInst [List with 1 elements]
+// @expected_tree                 ||  |  []> [20, 8] Assign
+// @expected_tree                 ||  |      +> [20, 8] Identifier (y)
+// @expected_tree                 ||  |      `> [20, 12] BooleanLiteral (false)
+// @expected_tree                 ||  `> ListInst [List with 0 elements]
+// @expected_tree                 []> [21, 6] IfThenElse
+// @expected_tree                     +> [9, 8] Identifier (x)
+// @expected_tree                     +> ListInst [List with 0 elements]
+// @expected_tree                     `> ListInst [List with 1 elements]
+// @expected_tree                        []> [22, 8] Assign
+// @expected_tree                            +> [22, 8] Identifier (x)
+// @expected_tree                            `> [22, 12] BooleanLiteral (true)
+

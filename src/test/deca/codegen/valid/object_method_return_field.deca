@@ -1,0 +1,45 @@
+// @result 1
+// @result 1.10000e+00
+// @result ok
+// @result ok
+class D {}
+class X {
+	int a = 1;
+	float b = 1.1;
+	boolean c = true;
+	D d = new D();
+	
+	int getA() {
+		return a;
+	}
+	float getB() {
+		return b;
+	}
+	boolean getC() {
+		return c;
+	}
+	D getD() {
+		return d;
+	}
+}
+{
+	int a = 0;
+	float b = 0.0;
+	boolean c = false;
+	D d = null;
+	X x = new X();
+	
+	a = x.getA();
+	b = x.getB();
+	c = x.getC();
+	d = x.getD();
+	
+	println(a);
+	println(b);
+	if (c) {
+		println("ok");
+	}
+	if (d != null) {
+		println("ok");
+	}
+}

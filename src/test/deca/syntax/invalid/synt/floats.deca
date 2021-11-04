@@ -1,0 +1,7 @@
+{
+    float x = 0.0f;
+    float y = 1.27f;
+    float z = 1.27e+52f;
+    float t = 1.28e-21F;
+    float w = 1.26e12;
+}

@@ -1,0 +1,10 @@
+/*
+    Description : Attribut ayant comme type celui d'une classe
+
+    Résultat : OK
+*/
+class A{}
+
+{
+    A p;
+}

@@ -1,0 +1,7 @@
+/*
+    Description : inclusion d'un fichier sans mettre d'espace entre include et les guillemets
+
+    Résultat : OK
+*/
+#include"open_brace.decah"
+#include"println_close_brace.decah"

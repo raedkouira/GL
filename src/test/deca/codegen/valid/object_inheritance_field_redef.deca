@@ -1,0 +1,31 @@
+// @result 2
+// @result 2.20000e+00
+// @result ok
+// @result ok
+/*
+Testing for field inheritance with redefinition, changing declaration order
+*/
+class D {}
+class X {
+        int a = 1;
+        float b = 1.1;
+        boolean c = true;
+        D d = new D();
+}
+class Y extends X {
+	float b = 2.2;
+	int a = 2;
+}
+{
+        Y y = new Y();
+
+        println(y.a);
+        println(y.b);
+        if (y.c) {
+                println("ok");
+        }
+        if (y.d != null) {
+                println("ok");
+        }
+}
+

@@ -1,0 +1,11 @@
+/*
+    Description : Test sur une méthode de type int n'ayant pas d'instruction return
+
+    Résultat : OK
+*/
+class A{
+    int x(){
+        println("aaa");
+    }
+
+}

@@ -1,0 +1,4 @@
+{
+int x = 3 > 4;
+}
+// @expected_output deca:2:8: Rvalue is of type boolean and leftOperand is of type int

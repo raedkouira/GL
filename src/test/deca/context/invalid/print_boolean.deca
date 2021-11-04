@@ -1,0 +1,10 @@
+/*
+    Description : Tests sur l'affichage d'un booléen
+
+    Résultat : erreur renvoyée
+*/
+{
+    boolean x = true;
+    println(x);
+}
+// @expected_output deca:7:4:

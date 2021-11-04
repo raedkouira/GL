@@ -1,0 +1,8 @@
+/*
+    Description : Initialisation d'un entier avec 010
+
+    Résultat : Erreur syntaxique
+*/
+{
+    int x = 010;
+}

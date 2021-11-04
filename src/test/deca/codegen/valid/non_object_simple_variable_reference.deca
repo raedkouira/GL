@@ -1,0 +1,20 @@
+// @result h = 169857
+// @result c = -55844
+/**
+    Description: test sur la correction de l'accès à une variable référencée sur la pile
+
+    Résultat : à définir...
+*/
+{
+    int a = -15255;
+    int b = -136540;
+    int c = -55844;
+    int d = -223658;
+    int e = -112563;
+    int f = 0;
+    int g = 5987455;
+    int h = 169857;
+    int i = 14587;
+    println("h = ", h);
+    print("c = ", c);
+}

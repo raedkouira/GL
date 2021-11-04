@@ -1,0 +1,13 @@
+/*
+    Description : Redéfinition d'une méthode (programme
+
+    Résultat : OK (programme p208 du poly)
+*/
+class A{
+    void m(){}
+    void p(){}
+}
+class B extends A{
+    void p(){}
+    void q(){}
+}

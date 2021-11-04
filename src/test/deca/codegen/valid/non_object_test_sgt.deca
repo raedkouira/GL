@@ -1,0 +1,26 @@
+// @result ok
+// @result ok
+// @result ok
+{
+        boolean x =  2 > 1;
+        boolean y = 1 > 2;
+        boolean z = 2 > 2;
+
+        if (x) {
+                println("ok");
+        } else {
+                println("ko");
+        }
+
+        if (y) {
+                println("ko");
+        } else {
+                println("ok");
+        }
+
+        if (z) {
+                println("ko");
+        } else {
+                println("ok");
+        }
+}

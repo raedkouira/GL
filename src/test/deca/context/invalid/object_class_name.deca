@@ -1,0 +1,6 @@
+/*
+    Description : Classe nommée object
+
+    Résultat : Erreur contextuelle (règle 1.3 condition implicite)
+*/
+class Object{}

@@ -1,0 +1,6 @@
+/*
+    Description : classe du nom boolean
+
+    Résultat : Erreur contextuelle (deca:6:6) (règle 1.3 condition implicite sur l'union disjointe ?, avec env_type l'environnement par défaut qui contient notamment boolean)
+*/
+class boolean{}

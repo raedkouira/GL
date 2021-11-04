@@ -1,0 +1,8 @@
+/*
+    Description : Utilisation de commentaires comme séparateurs
+
+    Résultat : OK
+*/
+{
+    int/*ttt*/a=1;
+}

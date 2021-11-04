@@ -1,0 +1,8 @@
+/*
+    Description : Test sur une classe comportant le symbole $ dans son nom
+
+    Résultat : Erreur : voir p35 du poly "4 Syntaxe du langage d'assemblage", le caractère $ n'est pas accepté
+*/
+class $a{
+
+}

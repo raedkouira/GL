@@ -1,0 +1,8 @@
+/*
+    Description : Ajout du suffixe f à un nombre flottant
+
+    Résultat : OK
+*/
+{
+    float x = 5.2f;
+}

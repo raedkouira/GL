@@ -1,0 +1,10 @@
+/*
+    Description : Déclaration d'un champ avec comme classe une classe qui existe
+
+    Résultat : OK
+*/
+class B{}
+class A{
+    B p;
+}
+

@@ -1,0 +1,38 @@
+{
+    int x;
+    if (true) {
+        x = 1;
+    } else {
+        if (false) {
+            x = 2;
+        } else {
+            x = 3;
+        }
+    }
+}
+// @expected_tree `> [1, 0] Program
+// @expected_tree    +> ListDeclClass [List with 0 elements]
+// @expected_tree    `> [1, 0] Main
+// @expected_tree       +> ListDeclVar [List with 1 elements]
+// @expected_tree       |  []> [2, 8] DeclVar
+// @expected_tree       |      +> [2, 4] Identifier (int)
+// @expected_tree       |      +> [2, 8] Identifier (x)
+// @expected_tree       |      `> NoInitialization
+// @expected_tree       `> ListInst [List with 1 elements]
+// @expected_tree          []> [3, 4] IfThenElse
+// @expected_tree              +> [3, 8] BooleanLiteral (true)
+// @expected_tree              +> ListInst [List with 1 elements]
+// @expected_tree              |  []> [4, 8] Assign
+// @expected_tree              |      +> [4, 8] Identifier (x)
+// @expected_tree              |      `> [4, 12] Int (1)
+// @expected_tree              `> ListInst [List with 1 elements]
+// @expected_tree                 []> [6, 8] IfThenElse
+// @expected_tree                     +> [6, 12] BooleanLiteral (false)
+// @expected_tree                     +> ListInst [List with 1 elements]
+// @expected_tree                     |  []> [7, 12] Assign
+// @expected_tree                     |      +> [7, 12] Identifier (x)
+// @expected_tree                     |      `> [7, 16] Int (2)
+// @expected_tree                     `> ListInst [List with 1 elements]
+// @expected_tree                        []> [9, 12] Assign
+// @expected_tree                            +> [9, 12] Identifier (x)
+// @expected_tree                            `> [9, 16] Int (3)

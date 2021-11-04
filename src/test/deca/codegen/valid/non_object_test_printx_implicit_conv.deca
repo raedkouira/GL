@@ -1,0 +1,6 @@
+// @result 0x1.4p+1
+// @result 0x1.4p+1
+{
+	printlnx(2 + 0.5);
+	printlnx(0.5 + 2);
+}

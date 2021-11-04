@@ -1,0 +1,55 @@
+{
+float i;
+int j = 4;
+i = 3 + 4;
+i = 4 + 3.2f + j;
+}
+// @expected_tree `> [1, 0] Program
+// @expected_tree    +> ListDeclClass [List with 0 elements]
+// @expected_tree    `> [1, 0] Main
+// @expected_tree       +> ListDeclVar [List with 2 elements]
+// @expected_tree       |  []> [2, 6] DeclVar
+// @expected_tree       |  ||  +> [2, 0] Identifier (float)
+// @expected_tree       |  ||  |  definition: type (builtin), type=float
+// @expected_tree       |  ||  +> [2, 6] Identifier (i)
+// @expected_tree       |  ||  |  definition: variable defined at [2, 6], type=float
+// @expected_tree       |  ||  `> NoInitialization
+// @expected_tree       |  []> [3, 4] DeclVar
+// @expected_tree       |      +> [3, 0] Identifier (int)
+// @expected_tree       |      |  definition: type (builtin), type=int
+// @expected_tree       |      +> [3, 4] Identifier (j)
+// @expected_tree       |      |  definition: variable defined at [3, 4], type=int
+// @expected_tree       |      `> [3, 8] Initialization
+// @expected_tree       |         `> [3, 8] Int (4)
+// @expected_tree       |            type: int
+// @expected_tree       `> ListInst [List with 2 elements]
+// @expected_tree          []> [4, 0] Assign
+// @expected_tree          ||  type: float
+// @expected_tree          ||  +> [4, 0] Identifier (i)
+// @expected_tree          ||  |  definition: variable defined at [2, 6], type=float
+// @expected_tree          ||  `> ConvFloat
+// @expected_tree          ||     type: float
+// @expected_tree          ||     `> [4, 4] Plus
+// @expected_tree          ||        type: int
+// @expected_tree          ||        +> [4, 4] Int (3)
+// @expected_tree          ||        |  type: int
+// @expected_tree          ||        `> [4, 8] Int (4)
+// @expected_tree          ||           type: int
+// @expected_tree          []> [5, 0] Assign
+// @expected_tree              type: float
+// @expected_tree              +> [5, 0] Identifier (i)
+// @expected_tree              |  definition: variable defined at [2, 6], type=float
+// @expected_tree              `> [5, 4] Plus
+// @expected_tree                 type: float
+// @expected_tree                 +> [5, 6] Plus
+// @expected_tree                 |  type: float
+// @expected_tree                 |  +> ConvFloat
+// @expected_tree                 |  |  type: float
+// @expected_tree                 |  |  `> [5, 4] Int (4)
+// @expected_tree                 |  |     type: int
+// @expected_tree                 |  `> [5, 8] Float (3.2)
+// @expected_tree                 |     type: float
+// @expected_tree                 `> ConvFloat
+// @expected_tree                    type: float
+// @expected_tree                    `> [5, 15] Identifier (j)
+// @expected_tree                       definition: variable defined at [3, 4], type=int

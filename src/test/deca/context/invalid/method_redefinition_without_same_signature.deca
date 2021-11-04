@@ -1,0 +1,12 @@
+/*
+    Description : Redefinition d'une methode sans la meme signature
+
+    Résultat : erreur contextuelle (deca:9:4)
+*/
+class A{
+    void x(int a){}
+    
+    void x(float a){}
+}
+// @expected_output deca:9:4
+

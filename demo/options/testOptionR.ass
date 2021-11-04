@@ -1,0 +1,73 @@
+; start main program
+	TSTO #6
+	BOV stack_overflow
+	ADDSP #5
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Beginning of main instructions:
+; int x = 1;
+	LOAD #1, R2
+	STORE R2, 3(GB)
+; int y = 2;
+	LOAD #2, R2
+	STORE R2, 4(GB)
+; int z;
+; z = 2 * x - 3 * y
+	LOAD #2, R2
+	MUL 3(GB), R2
+	PUSH R2
+	LOAD #3, R2
+	MUL 4(GB), R2
+	LOAD R2, R0
+	POP R2
+	SUB R0, R2
+	STORE R2, 5(GB)
+; print(ln) z
+	LOAD 5(GB), R2
+	LOAD R2, R1
+	WINT
+	WNL
+	HALT
+stack_overflow:
+	WSTR "Error: Stack overflow"
+	WNL
+	ERROR
+heap_overflow:
+	WSTR "Error: Impossible allocation : heap overflow"
+	WNL
+	ERROR
+div_by_zero:
+	WSTR "Error: Division by zero"
+	WNL
+	ERROR
+overflow:
+	WSTR "Error: Overflow during arithmetic operation"
+	WNL
+	ERROR
+invalid_input:
+	WSTR "Error: Invalid input"
+	WNL
+	ERROR
+null_object:
+	WSTR "Error: Cannot acces null object"
+	WNL
+	ERROR
+impossible_conv_float:
+	WSTR "Error: Impossible converion to float"
+	WNL
+	ERROR
+init.Object:
+	RTS
+code.Object.equals:
+	TSTO #1
+	BOV stack_overflow
+	PUSH R2
+	LOAD -2(LB), R2
+	CMP -3(LB), R2
+	SEQ R1
+end.Object.equals:
+	POP R2
+	RTS
+; end main program

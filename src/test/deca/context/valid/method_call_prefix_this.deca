@@ -1,0 +1,12 @@
+/*
+    Description : appel de méthode en préfixant par this 
+
+    Résultat : OK
+*/
+class B
+{
+    int e(){
+        return 5;
+    }
+    int x = this.e();
+}

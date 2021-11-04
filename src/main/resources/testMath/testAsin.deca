@@ -1,0 +1,13 @@
+#include "Math.decah"
+
+{
+    Math m = new Math();
+    float begin = -1.0;
+    float end = 1.0;
+    int N = 1000;
+    float step = (end - begin) / N;
+    while (begin < end) {
+        println(begin, " ", m.asin(begin));
+        begin = begin + step;
+    }
+}

@@ -1,0 +1,23 @@
+/*
+    Description : Appel de la méthode equals en passant en paramètre un objet
+
+    Résultat : OK
+*/
+class A{}
+class B{
+    Object f;
+    boolean u;
+    void x(){
+        f = this;
+        u = equals(f);
+        if (u){
+            println("u = true");
+        }else{
+            println("u = false");
+        }
+    }
+}
+{
+    B g = new B();
+    g.x();
+}

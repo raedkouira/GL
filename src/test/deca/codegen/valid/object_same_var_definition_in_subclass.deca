@@ -1,0 +1,16 @@
+// @result 3
+/*
+    Description : Définition d'une variable de même type et de même nom que celle de la superclasse
+
+    Résultat : OK ( voir p210 du poly)
+*/
+class A{
+    int x;
+}
+class B extends A{
+    int x=3;
+}
+{
+    B h = new B();
+    println(h.x);
+}

@@ -1,0 +1,47 @@
+// @result 2
+// @result 2.20000e+00
+// @result ok
+// @result ok
+// @result ok
+/*
+Testing for method inheritance with redefinition, changing definition order
+*/
+class D {}
+class X {
+        int a() {
+                return 1;
+        }
+        float b() {
+                return 1.1;
+        }
+        boolean c() {
+                return true;
+        }
+        D d() {
+                return new D();
+        }
+        void e() {
+                println("ok");
+        }
+}
+class Y extends X {
+	float b() {
+		return 2.2;
+	}
+	int a() {
+		return 2;
+	}
+}
+{
+        Y y = new Y();
+
+        println(y.a());
+        println(y.b());
+        if (y.c()) {
+                println("ok");
+        }
+        if (y.d() != null) {
+                println("ok");
+        }
+        y.e();
+}

@@ -1,0 +1,11 @@
+/*
+    Description : Test sur la possibilité d'accéder à un attribut d'une classe par la sélection
+
+    Résultat : OK
+*/
+class A{
+    int b;
+}
+class C{
+    int d = A.b;
+}

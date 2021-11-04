@@ -1,0 +1,6 @@
+/*
+    Description : Classe nommée int
+
+    Résultat : Erreur contextuelle (règle 1.3 condition implicite)
+*/
+class int{}

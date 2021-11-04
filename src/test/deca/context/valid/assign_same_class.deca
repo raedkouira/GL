@@ -1,0 +1,10 @@
+/*
+    Description : Assignation d'une classe déclarée
+
+    Résultat : OK
+*/
+class A{}
+
+class B{
+    A p = new A();
+}

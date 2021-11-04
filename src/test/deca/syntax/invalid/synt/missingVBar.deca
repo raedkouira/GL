@@ -1,0 +1,6 @@
+/* marche avec n'importe quel caractère à la place de | */
+
+{
+    x | y;
+}
+// @expected_output deca:4:6: token recognition error

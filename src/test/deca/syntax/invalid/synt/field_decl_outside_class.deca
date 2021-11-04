@@ -1,0 +1,7 @@
+/*
+    Description: Declaration d'un attribut en dehors d'une classe
+
+    Résultat : erreur syntaxique deca:6:0
+*/
+int x;
+// @expected_output deca:6:0

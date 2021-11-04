@@ -1,0 +1,13 @@
+// @result 5
+/*
+    Description : Test sur une déclaration de classe vide
+
+    Résultat : OK
+*/
+class A{
+    int y = 5;
+}
+{
+    A p = new A();
+    println(p.y);
+}

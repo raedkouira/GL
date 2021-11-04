@@ -1,0 +1,11 @@
+/*
+    Description : Utilisation d'un readint au sein d'un if
+
+    Résultat: Erreur contextuelle (deca:8:8)
+*/
+{
+    int x;
+    if (readInt()){
+        x = 2;
+    }
+}

@@ -1,0 +1,8 @@
+/*
+    Description : Instantiation du type "Object"
+
+    Résultat: OK (Object est dans l'environnement par défaut)
+*/
+class B{
+    Object p = new Object();
+}

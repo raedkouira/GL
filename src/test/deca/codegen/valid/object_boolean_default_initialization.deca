@@ -1,0 +1,19 @@
+// @result Test reussi
+/*
+    Description : Test sur l'initialisation d'un booléen (cf p211 4.3)
+
+    Résultat: OK (cf poly p212 4.3)
+
+*/
+class C{
+    boolean x; // vaut false
+    boolean y = x || x; // y DOIT VALOIR false (false || false)
+}
+{
+    C r = new C();
+    if (r.y == false){
+        println("Test reussi");
+    }else{
+        println("Test echoue");
+    }
+}

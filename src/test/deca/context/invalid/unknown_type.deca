@@ -1,0 +1,4 @@
+{
+INTEGER x;
+}
+// @expected_output deca:2:0: Type INTEGER is not defined

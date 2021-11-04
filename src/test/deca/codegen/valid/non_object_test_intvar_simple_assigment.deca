@@ -1,0 +1,9 @@
+// @result 2713
+// @result 345
+{
+	int x;
+	int y = 345;
+	x = 2713;
+	println(x);
+	println(y);
+}

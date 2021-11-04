@@ -1,0 +1,9 @@
+/*
+    Description : Test pour voir si une chaine contenant des guillements non echappes est refusée
+
+    Résultat : erreur renvoyée (deca:7:21: token recognition error at: )
+*/
+{
+    println("Hell"o !");
+}
+// @expected_output deca:7:21: token recognition error at: 

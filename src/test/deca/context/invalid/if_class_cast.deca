@@ -1,0 +1,13 @@
+/*
+    Description : Utilisation d'un conversion de classe au sein d'un if
+
+    Résultat: Erreur contextuelle (deca:9:8)
+*/
+class A{}
+{
+    int x;
+    A b = new A();
+    if ((Object)(b)){
+        x = 2;
+    }
+}

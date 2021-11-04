@@ -1,0 +1,10 @@
+/*
+    Description : Affectation de this à une variable d'un type tel que l'assignation est incompatible
+
+    Résultat: Erreur contextuelle (deca:8:10) (notion de assign_compatible())
+*/
+class A{}
+class B{
+    A p = this;
+}
+// @expected_output deca:8:10

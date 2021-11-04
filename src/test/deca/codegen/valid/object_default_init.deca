@@ -1,0 +1,26 @@
+// @result 0
+// @result 0.00000e+00
+// @result ok
+// @result ok
+/*
+Test for default initialisation of fields
+*/
+class A {
+}
+class X {
+	int a;
+	float b;
+	boolean c;
+	A d;
+}
+{
+	X x = new X();
+	println(x.a);
+	println(x.b);
+	if (!x.c) {
+		println("ok");
+	}
+	if (x.d == null) {
+		println("ok");
+	}
+}

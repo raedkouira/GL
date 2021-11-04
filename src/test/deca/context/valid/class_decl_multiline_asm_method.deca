@@ -1,0 +1,11 @@
+/*
+    Description: Declaration d'une methode asm comportant plusieurs lignes dans une classe
+
+    Résultat : OK
+*/
+class A{
+    void x () asm("aaa
+         bbb
+            ccc
+                ddd");
+}

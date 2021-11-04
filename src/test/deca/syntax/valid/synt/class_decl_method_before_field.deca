@@ -1,0 +1,12 @@
+/*
+    Description : Test de la possibilité de définir un attribut de classe après une méthode
+
+    Résultat : OK
+*/
+class A{
+    void m(){
+
+    }
+    int x;
+}
+{}

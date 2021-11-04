@@ -1,0 +1,8 @@
+/*
+    Description: Test sur la déclaration d'une classe avec la visibilité protected
+
+    Résultat : erreur syntaxique
+*/
+protected class C{
+}
+// @expected_output deca:6:0

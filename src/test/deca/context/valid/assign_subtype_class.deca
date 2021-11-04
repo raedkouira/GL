@@ -1,0 +1,12 @@
+/*
+    Description : Assignation d'une classe déclarée
+
+    Résultat : OK
+*/
+class A{}
+
+class B extends A{}
+
+class C{
+    A p = new B();
+}

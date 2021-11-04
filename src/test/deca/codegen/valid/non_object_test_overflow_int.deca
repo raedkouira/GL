@@ -1,0 +1,11 @@
+// @result 10
+{
+	int x = 1;
+	int pow = 0;
+	while (pow < 32) {
+		x = x * 2;
+		pow = pow + 1;
+	}
+	x = x + 10;
+	print(x);
+}

@@ -1,0 +1,10 @@
+/*
+    Description : Test sur la gestion de println avec l'opérateur this dans une classe
+
+    Résultat : Erreur contextuelle (deca:8:16)
+*/
+class A{
+    void x(){
+        println(this);
+    }
+}

@@ -1,0 +1,12 @@
+// @result Error: Division by zero
+/*
+    Description : Test sur la gestion de la division par 0
+
+    Résultat : à définir...
+
+*/
+
+{
+    println(1/0);
+    println("Test échoué : voir p96 paragraphe 5 phrase 1 et 5");
+}

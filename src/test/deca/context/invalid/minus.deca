@@ -1,0 +1,4 @@
+{
+int x = -"40";
+}
+// @expected_output deca:2:9: Invalid type for operand: String instead of int or float

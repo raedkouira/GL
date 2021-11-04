@@ -1,0 +1,11 @@
+// @result 1705032704
+/*
+    Description : Test sur la gestion de l'overflow d'une soustraction d'entier
+                    ( La spécification indique que l'opération doit être faite modulo 2^32)
+
+    Résultat : A définir...
+*/
+{
+    println(-2000000000--2000000000--2000000000--2000000000--2000000000);
+    //println("Si il est affiché au dessus 1705032704, test réussi !");
+}

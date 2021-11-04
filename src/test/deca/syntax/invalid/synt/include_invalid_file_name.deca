@@ -1,0 +1,6 @@
+/*
+    Description : Inclusion d'un fichier avec un nom invalide
+
+    Résultat : Erreur syntaxique
+*/
+#include "invalid_file_name_$.decah"

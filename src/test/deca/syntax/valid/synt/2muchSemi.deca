@@ -1,0 +1,14 @@
+{
+    print("hey");;;;
+}
+// @expected_tree `> [1, 0] Program
+// @expected_tree    +> ListDeclClass [List with 0 elements]
+// @expected_tree    `> [1, 0] Main
+// @expected_tree       +> ListDeclVar [List with 0 elements]
+// @expected_tree       `> ListInst [List with 4 elements]
+// @expected_tree          []> [2, 4] Print
+// @expected_tree          ||  `> ListExpr [List with 1 elements]
+// @expected_tree          ||     []> [2, 10] StringLiteral (hey)
+// @expected_tree          []> [2, 17] NoOperation
+// @expected_tree          []> [2, 18] NoOperation
+// @expected_tree          []> [2, 19] NoOperation

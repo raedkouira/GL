@@ -1,0 +1,10 @@
+/*
+    Description: Declaration d'une methode dans une classe avec des paramètres
+
+    Résultat : OK
+*/
+class A{
+    void x(int a, int b, int c){
+
+    }
+}

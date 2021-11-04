@@ -1,0 +1,4 @@
+// @result 0x1.d9999ap+1
+{
+	printx(3.7);
+}

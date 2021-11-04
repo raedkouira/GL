@@ -1,0 +1,16 @@
+// @result 1
+/*
+Testing for method call in return
+*/
+class X {
+	int aux() {
+		return 1;
+	}
+	int func() {
+		return aux();
+	}
+}
+{
+	X x = new X();
+	println(x.func());
+}

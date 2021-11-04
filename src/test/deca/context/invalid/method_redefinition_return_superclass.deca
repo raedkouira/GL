@@ -1,0 +1,24 @@
+/*
+    Description : Redefinition d'une methode, avec comme type de retour un sous type de la methode originelle (cf poly papier p14 "Si une methode est redefinie, alors celle ci...")
+
+    Résultat : erreur contextuelle
+*/
+class A{
+    B x(int d){
+        B p = new B();
+        return p;
+
+    }
+}
+class C{}
+class B extends C{
+
+}
+
+class D extends A{
+    C x(int d){
+        C w = new C();
+        return w;
+    }
+}
+

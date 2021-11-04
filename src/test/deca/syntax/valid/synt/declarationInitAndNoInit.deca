@@ -1,0 +1,18 @@
+{
+    int x = 3, y;
+}
+// @expected_tree `> [1, 0] Program
+// @expected_tree    +> ListDeclClass [List with 0 elements]
+// @expected_tree    `> [1, 0] Main
+// @expected_tree       +> ListDeclVar [List with 2 elements]
+// @expected_tree       |  []> [2, 8] DeclVar
+// @expected_tree       |  ||  +> [2, 4] Identifier (int)
+// @expected_tree       |  ||  +> [2, 8] Identifier (x)
+// @expected_tree       |  ||  `> [2, 10] Initialization
+// @expected_tree       |  ||     `> [2, 12] Int (3)
+// @expected_tree       |  []> [2, 15] DeclVar
+// @expected_tree       |      +> [2, 4] Identifier (int)
+// @expected_tree       |      +> [2, 15] Identifier (y)
+// @expected_tree       |      `> NoInitialization
+// @expected_tree       `> ListInst [List with 0 elements]
+// @expected_tree 

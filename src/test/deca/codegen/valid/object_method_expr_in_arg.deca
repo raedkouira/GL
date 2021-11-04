@@ -1,0 +1,19 @@
+// @result 2
+// @result 2.20000e+00
+// @result ok
+/*
+Testing for expressions passed as arguments
+*/
+class X {
+	void func(int arg1, float arg2, boolean arg3) {
+		println(arg1);
+		println(arg2);
+		if (arg3) {
+			println("ok");
+		}
+	}
+}
+{
+	X x = new X();
+	x.func(1+1, 1.1 + 1.1, (1 < 2) && (3 >= 1));
+}

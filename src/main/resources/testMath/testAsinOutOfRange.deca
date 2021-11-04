@@ -1,0 +1,7 @@
+#include "Math.decah"
+
+{
+    Math m = new Math();
+    m.asin(2.0);
+    println("You shouldn't see this!");
+}

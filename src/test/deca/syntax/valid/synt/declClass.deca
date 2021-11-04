@@ -1,0 +1,4 @@
+class A {
+protected int x;
+void method(int y,float z){}
+}

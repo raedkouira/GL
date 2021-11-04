@@ -1,0 +1,11 @@
+/*
+    Description : méthode ayant int comme type de retour et retournant un float
+
+    Résultat : Erreur contextuelle (règle 3.28 assign_compatible)
+*/
+class A{
+    int x(){
+        float e = 5.5;
+        return e;
+    }
+}

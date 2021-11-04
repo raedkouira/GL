@@ -1,0 +1,17 @@
+/*
+    Description : méthode de type Object retournant un sous type
+
+    Résultat : OK (règle 3.28 assign_compatible)
+*/
+class A{
+}
+class B extends A{}
+
+class C extends B{}
+
+class D{
+    Object e(){
+        C r = new C();
+        return r;
+    }
+}

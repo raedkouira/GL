@@ -1,0 +1,5 @@
+// @expected_output deca:4:4:
+{
+print("bonjour");
+int x;
+}

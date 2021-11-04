@@ -1,0 +1,13 @@
+/*
+    Description : Cast du type void vers int
+
+    Résultat : Erreur contextuelle (deca:9:13) (règle 3.39 / condition sur cast_compatible)
+*/
+class A{
+    void x(){
+    }
+    int y = (int)(x());
+}
+// @expected_output deca:9:13
+
+

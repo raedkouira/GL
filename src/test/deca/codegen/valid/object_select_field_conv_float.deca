@@ -1,0 +1,20 @@
+// @result 2.10000e+00
+// @result 2.10000e+00
+// @result 2.10000e+00
+// @result 2.10000e+00
+/*
+Test for field selection usage in arithmetic expressions
+*/
+class X {
+        int a = 1;
+        float b = 1.1;
+}
+{
+        X x = new X();
+
+        println(1.1 + x.a);
+        println(x.a + 1.1);
+	println(x.b + 1);
+	println(x.a + x.b);
+}
+

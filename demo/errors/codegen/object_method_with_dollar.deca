@@ -1,0 +1,10 @@
+/*
+    Description : Test sur une méthode comportant le symbole $ dans son nom
+
+    Résultat : Erreur : voir p35 du poly "4 Syntaxe du langage d'assemblage", le caractère $ n'est pas accepté
+*/
+class A{
+
+    void $ppp(){}
+
+}

@@ -1,0 +1,18 @@
+/*
+    Description : Utilisation d'un appel de méthode de retour non booléen au sein d'un if
+
+    Résultat: Erreur contextuelle (deca:14:12)
+*/
+class A
+{
+    int x;
+    int y =5;
+    int b(){
+        return y;
+    }
+    void t(){
+        if (b()){
+            x = 2;
+        }
+    }
+}

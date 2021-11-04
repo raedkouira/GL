@@ -1,0 +1,8 @@
+/*
+    Description: Declaration d'une méthode en dehors d'une classe
+
+    Résultat : erreur syntaxique deca:6:0
+*/
+void x(){
+}
+// @expected_output deca:6:0

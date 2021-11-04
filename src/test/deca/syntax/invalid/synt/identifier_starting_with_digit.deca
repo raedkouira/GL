@@ -1,0 +1,8 @@
+/*
+    Description : Création d'un identifiant commencant par un chiffre
+
+    Résultat : Erreur syntaxique
+*/
+{
+    int x = 5var;
+}

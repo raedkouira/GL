@@ -1,0 +1,15 @@
+// @result 2.10000e+00
+// @result 2.10000e+00
+/*
+Testing for float conversion as method argument
+*/
+class X {
+	void func(float arg) {
+		println(arg);
+	}
+}
+{
+	X x = new X();
+	x.func(1 + 1.1);
+	x.func(1.1 + 1);
+}

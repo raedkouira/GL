@@ -1,0 +1,24 @@
+// @result ok
+// @result ok
+// @result ok
+/*
+Testing superclass Object method equals with and without redef
+*/
+class X {}
+{
+	X a = new X();
+	X b = a;
+	X c = new X();
+
+	if (a.equals(b)) {
+		println("ok");
+	}
+	
+	if (b.equals(a)) {
+		println("ok");
+	}
+	
+	if(!a.equals(c)) {
+		println("ok");
+	}
+}

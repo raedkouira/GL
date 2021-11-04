@@ -1,0 +1,74 @@
+// @result 2
+// @result 3
+// @result 2
+// @result 2
+// @result 2.10000e+00
+// @result 3.10000e+00
+// @result 2.20000e+00
+// @result 2.20000e+00
+// @result 2.10000e+00
+// @result 1.10000e+00
+// @result ok
+// @result ok
+// @result ok
+// @result ok
+/*
+Testing for arguments manipulation and operations in class methods
+*/
+class X {
+	void a(int arg1, int arg2) {
+		int av = arg1 + arg2;
+		int bv;
+		println(arg1 + 1);
+		println(av);
+		bv = arg1 * arg2;
+		println(bv);
+		arg1 = 2;
+		println(arg1);
+	}
+	void b(float arg1, float arg2) {
+                float av = arg1 + arg2;
+                float bv;
+                println(arg1 + 1.0);
+                println(av);
+                bv = arg1 * arg2;
+                println(bv);
+		arg1 = 2.2;
+		println(arg1);
+        }
+	void c(int arg1, float arg2) {
+		float av = arg1 + arg2;
+                float bv;
+                println(arg2 + 1);
+                bv = arg1 * arg2;
+                println(bv);
+	}
+	void d(boolean arg1, boolean arg2) {
+		boolean av = arg1 && arg2;
+		boolean bv;
+		if (arg1 && arg2) {
+			println("ko");
+		} else {
+			println("ok");
+		}
+		if (arg1 || arg2) {
+			println("ok");
+		}
+		bv = arg1 || arg2;
+		if (av) {
+			println("ko");
+		} else {
+			println("ok");
+		}
+		if (bv) {
+			println("ok");
+		}
+	}
+}
+{
+	X x = new X();
+	x.a(1, 2);
+	x.b(1.1, 2.0);
+	x.c(1, 1.1);
+	x.d(true, false);
+}

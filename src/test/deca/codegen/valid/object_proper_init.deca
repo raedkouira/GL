@@ -1,0 +1,27 @@
+// @result 1
+// @result 1.10000e+00
+// @result ok
+// @result ok
+/*
+Test for proper initialisation of fields
+*/
+class A {
+}
+class X {
+        int a = 1;
+	float b = 1.1;
+        boolean c = true;
+        A d = new A();
+}
+{
+        X x = new X();
+        println(x.a);
+        println(x.b);
+        if (x.c) {
+                println("ok");
+        }
+        if (x.d != null) {
+                println("ok");
+        }
+}
+

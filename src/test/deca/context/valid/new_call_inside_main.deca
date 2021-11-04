@@ -1,0 +1,11 @@
+/*
+    Description : Test sur la possibilité d'utiliser l'opérateur new dans la classe main
+
+    Résultat : OK
+*/
+class A{
+
+}
+{
+    A b = new A();
+}

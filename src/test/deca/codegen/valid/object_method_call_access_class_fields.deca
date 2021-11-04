@@ -1,0 +1,23 @@
+// @result 1
+// @result 2
+// @result 30
+/*
+    Description : Accés à des attributs de la classe avec un appel de méthode
+
+    Résultat : OK
+*/
+class A{
+    int x = 1;
+    int z = 30;
+    int y = 2;
+
+    void a(){
+        println(x);
+        println(y);
+        println(z);
+    }
+}
+{
+    A i = new A();
+    i.a();
+}

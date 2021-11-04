@@ -1,0 +1,7 @@
+/*
+    Description : Classe qui étends une classe n'existant pas
+
+    Résultat : erreur contextuelle (deca:6:0)
+*/
+class C extends A{}
+// @expected_output deca:6:0

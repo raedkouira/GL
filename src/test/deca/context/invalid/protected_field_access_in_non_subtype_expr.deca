@@ -1,0 +1,15 @@
+/*
+    Description : Accés à un champ protégé dans une expression n'étant pas d'un sous type de la classe courante
+
+    Résultat: Erreur contextuelle (deca:12:17) (règle 3.66 condition 1)
+*/
+class A{
+    protected int x;
+}
+
+class B extends A{
+    int getX(A a){
+        return a.x;
+    }
+}
+// @expected_output deca:12:17

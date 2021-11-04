@@ -1,0 +1,8 @@
+/*
+    Description : Test sur la gestion de l'extension d'une classe pas encore déclarée
+
+    Résultat : Erreur contextuelle (deca:6:16) (cf regle 1.3 condition)
+*/
+class A extends B{}
+class B{}
+// @expected_output deca:6:16

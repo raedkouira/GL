@@ -1,0 +1,15 @@
+// @result ok
+// @result ok
+{
+        if (true) {
+                println("ok");
+        } else {
+                println("ko");
+        }
+
+        if (false) {
+                println("ko");
+        } else {
+                println("ok");
+        }
+}

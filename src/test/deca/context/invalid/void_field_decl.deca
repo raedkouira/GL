@@ -1,0 +1,9 @@
+/*
+    Description : Declaration d'un champ de type void
+
+    Résultat : erreur contextuelle (deca:7:4)
+*/
+class A{
+    void x;
+}
+// @expected_output deca:7:4

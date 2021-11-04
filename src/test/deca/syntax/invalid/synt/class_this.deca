@@ -1,0 +1,6 @@
+/*
+    Description : Classe nommée this
+
+    Résultat : Erreur syntaxique
+*/
+class this{}

@@ -1,0 +1,14 @@
+// @result Test reussi
+/*
+    Description : test sur un conditionnelle if else
+
+    Résultat : à définir...
+*/
+{
+    boolean x = true;
+    if (false && x){
+        println("Test echoue");
+    }else{
+        println("Test reussi");
+    }
+}

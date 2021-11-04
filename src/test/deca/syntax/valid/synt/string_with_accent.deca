@@ -1,0 +1,8 @@
+/*
+    Description : Test pour voir si une chaine contenant des accents est acceptée
+
+    Résultat : OK
+*/
+{
+    println("Héllo");
+}

@@ -1,0 +1,14 @@
+// @result Test reussi
+/*
+    Description : test sur un conditionnelle if
+
+    Résultat : à définir...
+*/
+{
+    boolean x = true;
+    int y = -5;
+    int z = 10;
+    if (x || false && true && !x && y <= z && y < z && z > y && z >= y && z != y && y != z){
+        println("Test reussi");
+    }
+}

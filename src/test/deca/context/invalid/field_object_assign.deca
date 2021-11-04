@@ -1,0 +1,12 @@
+/*
+    Description : Test sur la gestion d'un champ de type Object de la part d'un sous-type d'Object
+
+    Résultat : OK
+*/
+class B{}
+class A
+{
+    B c = new Object();
+}
+// @expected_tree unknown
+

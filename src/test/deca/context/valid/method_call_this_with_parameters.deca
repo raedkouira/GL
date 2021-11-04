@@ -1,0 +1,15 @@
+/*
+    Description : appel de méthode sans préfixer la classe avec des paramètres sur un objet défini
+
+    Résultat : OK
+*/
+class B
+{
+    int e(int a, int b, int c){
+        return 5;
+    }
+    int i = 1;
+    int j = 7;
+    int k = 9;
+    int x = e(i, j, k);
+}

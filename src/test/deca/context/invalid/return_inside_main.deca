@@ -1,0 +1,9 @@
+/*
+    Description : Instruction return dans le bloc main
+
+    Résultat : Erreur contextuelle
+*/
+{
+    int x = 1;
+    return x;
+}

@@ -1,0 +1,8 @@
+/*
+    Description : Nombre flottant trop petit
+
+    Résultat : Erreur syntaxique
+*/
+{
+    float f = 1.0E-50;
+}

@@ -1,0 +1,17 @@
+// @result 1
+/*
+Testing this in methid call
+*/
+class X {
+	int a = 1;
+	int get(X x) {
+		return x.a;
+	}
+	void func() {
+		println(get(this));
+	}	
+}
+{
+	X x = new X();
+	x.func();
+}

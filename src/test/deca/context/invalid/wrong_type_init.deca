@@ -1,0 +1,4 @@
+{
+int x = "a";
+}
+// @expected_output deca:2:8: Rvalue is of type String and leftOperand is of type int

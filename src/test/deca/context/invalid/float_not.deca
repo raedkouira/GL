@@ -1,0 +1,10 @@
+/*
+    Description : Test sur la gestion du symbole ! sur des flottants
+
+    Résultat : erreur contextuelle (cf poly papier page 8 : type_unary_op)
+*/
+{
+    float x = !5.5;
+}
+// @expected_output deca:7:15: Invalid type for operand ! :float instead of boolean (3.37)
+

@@ -1,0 +1,28 @@
+// @result ok
+// @result ok
+// @result ok
+// @result ok
+{
+        if(2 >= 3.0) {
+                println("ko");
+        } else {
+                println("ok");
+        }
+        if (2.0 >= 3) {
+                println("ko");
+        } else {
+                println("ok");
+        }
+
+        if (3 >= 2.0) {
+                println("ok");
+        } else {
+                println("ko");
+        }
+        if (3 >= 2.0) {
+                println("ok");
+        } else {
+                println("ko");
+        }
+}
+

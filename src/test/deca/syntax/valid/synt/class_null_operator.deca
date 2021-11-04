@@ -1,0 +1,9 @@
+/*
+    Description : Test sur une utilisation simple de l'opérateur null
+
+    Résultat : OK
+*/
+class A{}
+class B{
+    A p = null;
+}

@@ -1,0 +1,13 @@
+/*
+    Description : Méthode retournant un objet d'une classe différente de celle dans sa signature
+
+    Résultat : Erreur contextuelle
+*/
+class A{}
+class B{}
+class C{
+    A y(){
+        B b = new B();
+        return b;
+    }
+}

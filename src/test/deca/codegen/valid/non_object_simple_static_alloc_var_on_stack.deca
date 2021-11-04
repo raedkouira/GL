@@ -1,0 +1,35 @@
+// @result Test réussi !
+/**
+    Description: test de la gestion de la déclaration de variables
+
+    Résultat : à définir...
+*/
+{
+    int a = -15;
+    int b = -10;
+    int c = -5;
+    int d = -2;
+    int e = -1;
+    int f = 0;
+    int g = 0;
+    int h = 0;
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    int l = 0;
+    int m = 0;
+    int n = 0;
+    int o = 0;
+    int p = 0;
+    int q = 0;
+    int r = 0;
+    int s = 0;
+    int t = 0;
+    int u = 0;
+    int v = 1;
+    int w = 2;
+    int x = 5;
+    int y = 10;
+    int z = 15;
+    println("Test réussi !");
+}

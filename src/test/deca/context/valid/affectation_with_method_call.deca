@@ -1,0 +1,12 @@
+/*
+    Description : Test sur l'affectation avec un appel de méthode
+
+    Résultat : OK
+*/
+class A{
+    int x(){
+        return 5;
+    }
+
+    int y = x();
+}

@@ -1,0 +1,5 @@
+{
+boolean y = true;
+boolean x = !y && false;
+int z = --1;
+}

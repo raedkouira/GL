@@ -1,0 +1,4 @@
+{
+int x = 3 + "a";
+}
+// @expected_output deca:2:8: Arithmetic operation "+" is invalid between type int and type String

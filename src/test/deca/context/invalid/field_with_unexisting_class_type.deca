@@ -1,0 +1,10 @@
+/*
+    Description : Déclaration d'un champ avec comme classe une classe qui existe pas
+
+    Résultat : erreur contextuelle (deca:4:4)
+*/
+class A{
+    B p;
+}
+// @expected_output deca:4:4
+

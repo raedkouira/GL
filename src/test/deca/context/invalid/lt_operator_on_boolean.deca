@@ -1,0 +1,10 @@
+/*
+    Description : Test sur la gestion du symbole < sur des booléens
+
+    Résultat : erreur contextuelle (cf regle 3.33)
+*/
+{
+    true < true;
+}
+// @expected_output deca:7:4: Comparison operation "<" is not supported for types boolean and boolean (3.33)
+

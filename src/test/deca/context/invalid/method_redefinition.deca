@@ -1,0 +1,14 @@
+/*
+    Description : Redefinition d'une méthode
+
+    Résultat : Erreur contextuelle (deca:9:4) (règle 2.6 condition implicite)
+*/
+class A{
+    void x(){
+    }
+    void x(){
+    }
+}
+// @expected_output deca:9:4
+
+

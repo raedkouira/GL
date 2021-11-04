@@ -1,0 +1,4 @@
+#include "toInclude.deca"
+{
+    println("hello im include");
+}

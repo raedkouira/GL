@@ -1,0 +1,8 @@
+/*
+    Description : assignation dans une liste de déclaration de field avec une valeur déclarée précédemment
+
+    Résultat : OK
+*/
+class A{
+    int x = 2, y = 3, z = x;
+}

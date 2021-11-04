@@ -1,0 +1,12 @@
+/*
+    Description : Sélection d'un champ qui existe pas dans une classe
+
+    Résultat : Erreur contextuelle (deca:10:12) (règle 3.65)
+*/
+class A{
+    int x = 2;
+}
+class B{
+    int y = A.n;
+}
+// @expected_output deca:10:12

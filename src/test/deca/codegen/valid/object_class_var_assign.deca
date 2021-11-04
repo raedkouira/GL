@@ -1,0 +1,21 @@
+// @result 1
+// @result 2
+// @result ok
+/*
+Testing for class instance assignment
+*/
+class X {
+	int x = 1;
+	void func() {
+		println("ok");
+	}
+}
+{
+	X x = new X();
+	X y = x;
+	
+	println(y.x);
+	x.x = 2;
+	println(y.x);
+	y.func();
+}

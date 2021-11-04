@@ -1,0 +1,22 @@
+// @result 2
+// @result 2.20000e+00
+/*
+Test for method call in arithmetic declarations
+*/
+class X {
+        int a() {
+		return 1;
+	}
+        float b() {
+		return 1.1;
+}
+}
+{
+        X x = new X();
+        int a = 1 + x.a();
+        float b = 1.1 + x.b();
+
+        println(a);
+        println(b);
+}
+

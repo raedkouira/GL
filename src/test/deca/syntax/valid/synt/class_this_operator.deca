@@ -1,0 +1,8 @@
+/*
+    Description : Test sur une utilisation simple de l'opérateur this
+
+    Résultat : OK
+*/
+class B{
+    B p = this;
+}

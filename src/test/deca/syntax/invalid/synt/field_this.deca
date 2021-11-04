@@ -1,0 +1,8 @@
+/*
+    Description : Classe nommée this
+
+    Résultat : Erreur syntaxique
+*/
+class a{
+    int this;
+}

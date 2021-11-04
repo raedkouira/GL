@@ -1,0 +1,6 @@
+/*
+    Description : inclusion circulaire
+
+    Résultat : Erreur sur analyse lexicale
+*/
+#include "a_include_b.deca"

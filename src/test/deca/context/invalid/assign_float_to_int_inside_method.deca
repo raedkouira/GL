@@ -1,0 +1,10 @@
+/*
+    Description : Assignation d'un flottant à un entier à l'intérieur d'une méthode
+
+    Résultat : Erreur contextuelle
+*/
+class A{
+    void x(float a, float b){
+        int c = a;
+    }
+}

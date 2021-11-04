@@ -1,0 +1,11 @@
+/*
+    Description : Méthode retournant un booléen alors que figure int dans sa signature
+
+    Résultat : Erreur contextuelle
+*/
+class C{
+    boolean b = true;
+    int y(){
+        return b;
+    }
+}

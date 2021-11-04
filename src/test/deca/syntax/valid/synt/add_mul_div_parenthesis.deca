@@ -1,0 +1,46 @@
+/*
+    Description : Test sur la bonne gestion des parenthèses (addition, multiplication, division)
+
+    Résultat : OK
+*/
+{
+    int x = 2;
+    int y = -9;
+    int z = 12;
+
+    x = z/(z-12)+-(x*y);
+}
+// @expected_tree `> [6, 0] Program
+// @expected_tree    +> ListDeclClass [List with 0 elements]
+// @expected_tree    `> [6, 0] Main
+// @expected_tree       +> ListDeclVar [List with 3 elements]
+// @expected_tree       |  []> [7, 8] DeclVar
+// @expected_tree       |  ||  +> [7, 4] Identifier (int)
+// @expected_tree       |  ||  +> [7, 8] Identifier (x)
+// @expected_tree       |  ||  `> [7, 10] Initialization
+// @expected_tree       |  ||     `> [7, 12] Int (2)
+// @expected_tree       |  []> [8, 8] DeclVar
+// @expected_tree       |  ||  +> [8, 4] Identifier (int)
+// @expected_tree       |  ||  +> [8, 8] Identifier (y)
+// @expected_tree       |  ||  `> [8, 10] Initialization
+// @expected_tree       |  ||     `> [8, 12] UnaryMinus
+// @expected_tree       |  ||        `> [8, 13] Int (9)
+// @expected_tree       |  []> [9, 8] DeclVar
+// @expected_tree       |      +> [9, 4] Identifier (int)
+// @expected_tree       |      +> [9, 8] Identifier (z)
+// @expected_tree       |      `> [9, 10] Initialization
+// @expected_tree       |         `> [9, 12] Int (12)
+// @expected_tree       `> ListInst [List with 1 elements]
+// @expected_tree          []> [11, 4] Assign
+// @expected_tree              +> [11, 4] Identifier (x)
+// @expected_tree              `> [11, 8] Plus
+// @expected_tree                 +> [11, 8] Divide
+// @expected_tree                 |  +> [11, 8] Identifier (z)
+// @expected_tree                 |  `> [11, 10] Minus
+// @expected_tree                 |     +> [11, 11] Identifier (z)
+// @expected_tree                 |     `> [11, 13] Int (12)
+// @expected_tree                 `> [11, 17] UnaryMinus
+// @expected_tree                    `> [11, 18] Multiply
+// @expected_tree                       +> [11, 19] Identifier (x)
+// @expected_tree                       `> [11, 21] Identifier (y)
+

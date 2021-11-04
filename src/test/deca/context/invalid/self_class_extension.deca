@@ -1,0 +1,7 @@
+/*
+    Description : Classe qui s'étends elle même après définition
+
+    Résultat : Erreur contextuelle (deca:6:16) (règle 1.3: L'identificateur super doit être un identificateur préalablement défini)
+*/
+class C extends C{}
+// @expected_output deca:6:16

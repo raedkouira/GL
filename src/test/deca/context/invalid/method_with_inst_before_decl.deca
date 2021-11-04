@@ -1,0 +1,10 @@
+/*
+    Description : Test sur la gestion de de l'ordre des déclarations et paramètres dans une méthode
+
+    Resultat : Erreur contextuelle (regle 3.14, deca:7:30)
+*/
+class A{
+    void x(){println("Hello");int y;}
+}
+// @expected_output deca:7:30
+

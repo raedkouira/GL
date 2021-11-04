@@ -1,0 +1,33 @@
+// @result 1
+// @result 1.10000e+00
+// @result ok
+// @result ok
+/*
+Testing for field assignment in method
+*/
+class D {}
+class X {
+	int a;
+	float b;
+	boolean c;
+	D d;	
+
+	void func() {
+		a = 1;
+		b = 1.1;
+		c = true;
+		d = new D();
+	}
+}
+{
+	X x = new X();
+	x.func();
+	println(x.a);
+	println(x.b);
+	if (x.c) {
+		println("ok");
+	}
+	if (x.d != null) {
+		println("ok");
+	}
+}

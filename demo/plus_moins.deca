@@ -1,0 +1,43 @@
+{
+	int mystery_number;
+	int try_number =  -1;
+	int n_try = 0;
+	int difficulty = -1;	
+
+	println("Bienvenue dans le jeu du plus ou moins!");	
+
+	while (difficulty < 1 || difficulty > 3) {
+		println("Choissisez une difficulte");
+		println("1 : 1 - 10");
+		println("2 : 1 - 100");
+		println("3 : 1 - 1000");
+		difficulty = readInt();
+		
+		if (difficulty < 1 || difficulty > 3) {
+			println("Difficulte invalide, reesayez");
+		}
+	}
+
+	if (difficulty == 1) {
+		mystery_number = 3;
+	} else if (difficulty == 2) {
+		mystery_number = 37;
+	} else {
+		mystery_number = 137;
+	}
+	
+
+	while(try_number != mystery_number) {
+		n_try = n_try + 1;
+		println("Essayez de deviner le nombre mystere");
+		try_number = readInt();
+
+		if (try_number > mystery_number) {
+			println("Moins!");
+		} else if (try_number < mystery_number) {
+			println("Plus!");
+		}
+	}
+
+	println("Bravo vous avez trouve le nombre mystere en ", n_try, " coups!");
+}

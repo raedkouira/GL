@@ -1,0 +1,17 @@
+// @result 555
+/*
+    Description : Test sur la gestion de la règle "Pour initialiser un objet d’une sous-classe, on commence par initialiser les champs hérités, puis on initialise les champs propres de la classe.", p212 du poly
+
+    Résultat: OK 
+
+*/
+class C {
+    int a = 1;
+}
+class A extends C{
+    int a = 555;
+}
+{
+    A o = new A();
+    println(o.a);
+}

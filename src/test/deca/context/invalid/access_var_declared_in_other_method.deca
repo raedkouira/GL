@@ -1,0 +1,15 @@
+/*
+    Description : Accès à une variable déclarée dans une autre méthode
+
+    Résultat : Erreur contextuelle
+*/
+class A{
+    void y(){
+        int x = 10;
+    }
+
+    void z(){
+        x = 12;
+    }
+}
+        

@@ -1,0 +1,11 @@
+/*
+    Description : méthode ayant float comme type de retour et retournant un int
+
+    Résultat : OK (règle 3.28 assign_compatible)
+*/
+class A{
+    float x(){
+        int e = 5;
+        return e;
+    }
+}

@@ -1,0 +1,14 @@
+/*
+    Description : Nommage d'une methode avec le même nom qu'un attribut de la super classe
+
+    Résultat : erreur contextuelle (deca:11:4) (void condition règle decl_method poly papier p14)
+*/
+class Z{
+    int y;
+}
+
+class A extends Z{
+    void y(){}
+}
+// @expected_output deca:11:4
+

@@ -1,0 +1,22 @@
+// @result 2.10000e+00
+// @result 2.10000e+00
+// @result 2.10000e+00
+// @result 2.10000e+00
+/*
+Test for successive field selection in float conversions
+*/
+class X {
+        int a = 1;
+        float b = 1.1;
+}
+class Y {
+	X x = new X();
+}
+{
+        Y y = new Y();
+
+        println(1.1 + y.x.a);
+        println(y.x.a + 1.1);
+        println(y.x.b + 1);
+        println(y.x.a + y.x.b);
+}

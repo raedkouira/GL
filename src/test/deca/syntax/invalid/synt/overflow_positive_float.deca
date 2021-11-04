@@ -1,0 +1,9 @@
+// @expected_output deca:8:14:
+/*
+    Description : Initialisation d'un float avec une valeur trop grande
+
+    Résultat : OK
+*/
+{
+    float x = 450000000000000000000000000000000000000000000000000000000000.0;
+}

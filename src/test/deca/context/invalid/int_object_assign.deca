@@ -1,0 +1,12 @@
+/*
+    Description : Assignation d'un objet à un entier
+
+    Resultat : Erreur contextuelle
+*/
+class X{
+
+}
+class A{
+    X y;
+    int x = y;
+}

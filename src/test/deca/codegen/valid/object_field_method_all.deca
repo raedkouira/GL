@@ -1,0 +1,82 @@
+// @result 1
+// @result 1.10000e+00
+// @result ok
+// @result ok
+// @result 2
+// @result 2.20000e+00
+// @result 2.10000e+00
+// @result 2.10000e+00
+// @result 2.10000e+00
+// @result 2.10000e+00
+// @result ok
+// @result ok
+// @result ok
+// @result ok
+// @result ok
+// @result ok
+// @result 2
+// @result 2.20000e+00
+/*
+Testing for field selection into method call
+*/
+class X {
+	int a() {
+		return 1;
+	}
+	float b() {
+		return 1.1;
+	}
+	boolean c() {
+		return true;
+	}
+	void d() {
+		println("ok");
+	}
+}
+class Y {
+	X x = new X();
+}
+{
+	Y y = new Y();
+	boolean a = y.x.c();
+	boolean b = !y.x.c();	
+	int c = 1 + y.x.a();
+	float d = 1.1 + y.x.b();
+
+	println(y.x.a());
+	println(y.x.b());
+	if (y.x.c()) {
+		println("ok");
+	}
+	y.x.d();
+
+	println(1 + y.x.a());
+	println(1.1 + y.x.b());
+	
+	println(1.1 + y.x.a());
+        println(y.x.a() + 1.1);
+        println(y.x.b() + 1);
+        println(y.x.a() + y.x.b());
+	
+        if (a) {
+                println("ok");
+        }
+        if (!b) {
+                println("ok");
+        }
+        if (y.x.c()) {
+                println("ok");
+        }
+        if (y.x.c() && true) {
+                println("ok");
+        }
+        if (y.x.c() || false) {
+                println("ok");
+        }
+        if (y.x.a() < 2) {
+                println("ok");
+        }
+	
+        println(c);
+        println(d);
+}

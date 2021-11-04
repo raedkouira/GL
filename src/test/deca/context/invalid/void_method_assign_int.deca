@@ -1,0 +1,9 @@
+/*
+    Description : Test sur l'assignation à partir d'un appel de méthode de type void
+
+    Résultat : Erreur contextuelle
+*/
+class A{
+    int x = y();
+    void y(){}
+}

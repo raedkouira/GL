@@ -1,0 +1,9 @@
+/*
+    Description : Test sur une utilisation simple de l'opérateur new
+
+    Résultat : OK
+*/
+class A{}
+class B{
+    A p = new A();
+}

@@ -1,0 +1,8 @@
+/*
+    Description : Assignation d'un nombre en notation hexadécimale erronnée à un flottant
+
+    Résultat : Erreur syntaxique
+*/
+{
+    float x = 0xAGAP5f;
+}

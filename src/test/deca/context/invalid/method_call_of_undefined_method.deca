@@ -1,0 +1,12 @@
+/*
+    Description : Appel d'une méthode n'existant pas
+
+    Résultat : erreur contextuelle (deca:10:8)
+*/
+class A{
+    void y(){
+        x();
+    }
+}
+// @expected_output deca:8:8
+

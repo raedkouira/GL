@@ -1,0 +1,14 @@
+{
+print(3);
+print(3.9);
+print("hell world");
+printx(3);
+printx(3.9);
+printx("hell world");
+println(3);
+println(3.9);
+println("hell world");
+printlnx(3);
+printlnx(3.9);
+printlnx("hell world");
+}

@@ -1,0 +1,10 @@
+/*
+    Description : cast float vers int avec float trop grand
+
+    Résultat: Erreur
+*/
+class A
+{
+    float x = 5000000000000.6;
+    int z = (int)(x):
+}

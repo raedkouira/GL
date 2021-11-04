@@ -1,0 +1,10 @@
+// @result abcdefghijklmnopqrstuvwxyz Test réussi si 88 caracteres sont affiches pour cette phrase.
+/*
+    Description : test pour voir si l'affichage d'une chaine longue (88 caracteres) fonctionne
+
+    Résultat : à définir
+*/
+
+{
+    print("abcdefghijklmnopqrstuvwxyz Test réussi si 88 caracteres sont affiches pour cette phrase.");
+}

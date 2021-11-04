@@ -1,0 +1,13 @@
+/*
+    Description: Test sur la déclaration de plusieurs classes
+
+    Résultat : OK
+*/
+class A{
+}
+class B{
+}
+class C{
+}
+{
+}

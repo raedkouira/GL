@@ -1,0 +1,8 @@
+/*
+    Description: Declaration d'une methode asm dans une classe
+
+    Résultat : OK
+*/
+class A{
+    void x () asm("aaa");
+}

@@ -1,0 +1,9 @@
+// @expected_output deca:8:21: value cannot be stored as an integer value
+/**
+    Description: test sur la gestion d'erreur sur la conversion d'un flottant négatif en dehors des bornes d'un entier
+
+    Résultat : erreur de compilation levée
+*/
+{
+    int x = (float)(-40000000000);
+}

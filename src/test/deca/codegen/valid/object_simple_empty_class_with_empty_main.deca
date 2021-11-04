@@ -1,0 +1,7 @@
+/*
+    Description : Classe vide avec main vide
+
+    Résultat : OK
+*/
+class A{}
+{}

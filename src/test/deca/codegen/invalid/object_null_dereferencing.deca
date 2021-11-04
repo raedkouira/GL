@@ -1,0 +1,14 @@
+/*
+    Description : Déréférencement d'un objet null (c est censé avoir été initialisé à null en étape C) (cf p211 4.2)
+
+    Résultat: Erreur a l'exécution (deca:13:12) (déréférencement de null)
+
+*/
+class C{
+    int x;
+}
+class B{
+    C c;
+
+    int x = c.x;
+}

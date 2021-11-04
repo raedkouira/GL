@@ -1,0 +1,16 @@
+// @result OK
+/*
+    Description : Test si l'évaluation d'un OU est bien faire de manière paresseuse de gauche à droite
+
+    Résultat : OK
+*/
+class A{
+    boolean x;
+}
+{
+    A i = new A();
+
+    if (true || i.x){
+        println("OK");
+    }
+}

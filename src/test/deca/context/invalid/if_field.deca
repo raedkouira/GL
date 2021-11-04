@@ -1,0 +1,13 @@
+/*
+    Description : Utilisation d'une champ int au sein d'un if
+
+    Résultat: Erreur contextuelle (deca:9:12)
+*/
+class A{
+    int x =1;
+    void b(){
+        if (x){
+            x = 2;
+        }
+    }
+}

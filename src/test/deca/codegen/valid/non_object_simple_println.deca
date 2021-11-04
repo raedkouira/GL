@@ -1,0 +1,4 @@
+// @result Test réussi ! 
+{
+    println("Test réussi ! ");
+}

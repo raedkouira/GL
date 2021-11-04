@@ -1,0 +1,4 @@
+class A {
+    int get2D(int x, float y) {}
+    int x = get2D(3.14, 3.14);
+}

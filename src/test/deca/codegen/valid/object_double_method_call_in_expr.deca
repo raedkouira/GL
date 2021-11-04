@@ -1,0 +1,25 @@
+// @result 2
+// @result 2.20000e+00
+/*
+Test for successive method calls in arithmetic operations
+*/
+class X {
+        int a() {
+		return 1;
+	}
+        float b() {
+		return 1.1;
+	}
+}
+class Y {
+        X x() {
+		return new X();
+	}
+}
+{
+        Y y = new Y();
+
+        println(1 + y.x().a());
+        println(1.1 + y.x().b());
+}
+

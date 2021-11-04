@@ -1,0 +1,9 @@
+/*
+    Description : Assignation d'un flottant en notation hexadécimale à un flottant
+
+    Résultat : OK
+*/
+{
+    float b = 0XAa.FFP+0F;
+    println(b);
+}

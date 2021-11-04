@@ -1,0 +1,16 @@
+/*
+    Description : Accés à un champ protégé dans une classe n'étant pas d'un sous type
+
+    Résultat: Erreur contextuelle (deca:13:8) (règle 3.66 condition 2)
+*/
+class A{
+    protected int x;
+}
+
+class X{
+    void m(){
+        A a = new A();
+        println(a.x);
+    }
+}
+// @expected_output deca:13:8

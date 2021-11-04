@@ -1,0 +1,10 @@
+// @result 32
+{
+	int x = 0;
+	int z = 1;
+	while (x < 5) {
+		z = z * 2;
+		x = x + 1;
+	}
+	print(z);
+}

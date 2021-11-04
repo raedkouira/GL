@@ -1,0 +1,23 @@
+{
+    x && y || z || t;
+    x && y && z || t;
+}
+// @expected_tree `> [1, 0] Program
+// @expected_tree    +> ListDeclClass [List with 0 elements]
+// @expected_tree    `> [1, 0] Main
+// @expected_tree       +> ListDeclVar [List with 0 elements]
+// @expected_tree       `> ListInst [List with 2 elements]
+// @expected_tree          []> [2, 4] Or
+// @expected_tree          ||  +> [2, 11] Or
+// @expected_tree          ||  |  +> [2, 4] And
+// @expected_tree          ||  |  |  +> [2, 4] Identifier (x)
+// @expected_tree          ||  |  |  `> [2, 9] Identifier (y)
+// @expected_tree          ||  |  `> [2, 14] Identifier (z)
+// @expected_tree          ||  `> [2, 19] Identifier (t)
+// @expected_tree          []> [3, 4] Or
+// @expected_tree              +> [3, 4] And
+// @expected_tree              |  +> [3, 6] And
+// @expected_tree              |  |  +> [3, 4] Identifier (x)
+// @expected_tree              |  |  `> [3, 9] Identifier (y)
+// @expected_tree              |  `> [3, 14] Identifier (z)
+// @expected_tree              `> [3, 19] Identifier (t)

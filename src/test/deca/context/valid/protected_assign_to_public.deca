@@ -1,0 +1,9 @@
+/*
+    Description : Assignation d'une variable protected à une variable publique
+
+    Résultat: OK
+*/
+class A{
+    protected int x = 1;
+    int y = x;
+}

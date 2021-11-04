@@ -1,0 +1,9 @@
+// @expected_output 8:15: value cannot be stored as a float value
+/*
+    Description : Initialisation d'un float avec une valeur trop petite
+
+    Résultat : OK
+*/
+{
+    float x = -45000000000000000000000000000000000000000000000000000000000.0;
+}

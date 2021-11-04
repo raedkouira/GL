@@ -1,0 +1,6 @@
+// @expected_output deca:4:12:
+{
+    while(true) {
+        int x;
+    }
+}

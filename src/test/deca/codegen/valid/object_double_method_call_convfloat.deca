@@ -1,0 +1,28 @@
+// @result 2.10000e+00
+// @result 2.10000e+00
+// @result 2.10000e+00
+// @result 2.10000e+00
+/*
+Test for successive method calls in float conversions
+*/
+class X {
+        int a() {
+		return 1;
+	}
+        float b() {
+		return 1.1;
+	}
+}
+class Y {
+        X x() {
+		return new X();
+	}
+}
+{
+        Y y = new Y();
+
+        println(1.1 + y.x().a());
+        println(y.x().a() + 1.1);
+        println(y.x().b() + 1);
+        println(y.x().a() + y.x().b());
+}

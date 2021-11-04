@@ -1,0 +1,10 @@
+/*
+    Description : Test sur la gestion des déclarations de variables de meme nom
+
+    Resultat : Erreur contextuelle (regle 3.17 / condition implicite, deca:8:13)
+*/
+class A{
+    int y;
+    void x(){int y;}
+}
+// @expected_output deca:8:13

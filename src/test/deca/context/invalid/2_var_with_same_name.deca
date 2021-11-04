@@ -1,0 +1,10 @@
+/*
+    Description : 2 variables dans le main de même nom
+
+    Résultat : Erreur contextuelle
+*/
+{
+  int x;
+  int x;
+
+}

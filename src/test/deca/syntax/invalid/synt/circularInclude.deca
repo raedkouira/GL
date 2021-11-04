@@ -1,0 +1,5 @@
+#include "circularInclude2.deca"
+
+{
+println("hello 1");
+}

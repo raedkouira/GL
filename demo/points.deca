@@ -1,0 +1,44 @@
+class Point2D {
+	int x;
+	int y;
+
+	void diag(int d) {
+		x = x + d;
+		y = y + d;
+	}
+
+	void display() {
+		println("(", x, ", ", y, ")");
+	}
+}
+class Point3D extends Point2D{
+	int z;
+	
+	void diag(int d) {
+		x = x + d;
+		y = y + d;
+		z = z + d;
+	}
+
+	void display() {
+		println("(", x, ", ", y, ", ", z, ")");
+	}
+}
+{
+	Point2D p1 = new Point2D();
+	Point3D p2 = new Point3D();
+	
+	print("p1 a les coordonnees : ");
+	p1.display();
+
+	print("p2 a les coordonnees : ");
+	p2.display();
+	
+	p1.diag(2);
+	p2.diag(3);
+
+	print("p1 a les coordonnees : ");
+	p1.display();
+	print("p2 a les coordonnees : ");
+	p2.display();
+}	

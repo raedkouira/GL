@@ -1,0 +1,10 @@
+/*
+    Description : Méthode dans une classe contenant un println
+
+    Résultat : OK
+*/
+class A{
+    void b(){
+        println("OK");
+    }
+}

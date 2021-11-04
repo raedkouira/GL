@@ -1,0 +1,11 @@
+// @expected_tree `> [9, 0] Program
+// @expected_tree    +> ListDeclClass [List with 0 elements]
+// @expected_tree    `> [9, 0] Main
+// @expected_tree       +> ListDeclVar [List with 0 elements]
+// @expected_tree       `> ListInst [List with 1 elements]
+// @expected_tree          []> [10, 0] Println
+// @expected_tree              `> ListExpr [List with 1 elements]
+// @expected_tree                 []> [10, 8] StringLiteral ("Hello")
+{
+println("Hello");
+}

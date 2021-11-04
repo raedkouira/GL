@@ -1,0 +1,23 @@
+// @result 6
+/*
+    Description : Test de la gestion de la règle "si les champs hérités sont initialisés par des appels de méthodes qui sont elles-mêmes redéfinies dans la sous-classe alors l’initialisation des champs hérités peut indirectement accéder/modifier ceux de la sous-classe."
+
+    Résultat : OK
+*/
+class A{
+    int x = y();
+
+    int y(){
+        return 5;
+    }
+}
+class B extends A{
+    int y(){
+        return 6;
+    }
+}
+{
+    B g = new B();
+
+    println(g.x);
+}

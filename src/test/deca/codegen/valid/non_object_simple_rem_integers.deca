@@ -1,0 +1,11 @@
+// @result 5
+/*
+    Description : reste entier de 2 nombres entiers
+
+    Résultat : à définir...
+
+*/
+{
+    println(15%10);
+    //println("Si le résultat affiché est 5, test réussi !);
+}

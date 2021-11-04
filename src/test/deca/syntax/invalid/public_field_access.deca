@@ -1,0 +1,13 @@
+/*
+    Description : accés à un champ public
+
+    Résultat : OK
+*/
+class A{
+    public int x;
+}
+{
+    A u = new A();
+
+    u.x;
+}

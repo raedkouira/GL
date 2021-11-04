@@ -1,0 +1,18 @@
+{
+float i = 4;
+}
+// @expected_tree `> [1, 0] Program
+// @expected_tree    +> ListDeclClass [List with 0 elements]
+// @expected_tree    `> [1, 0] Main
+// @expected_tree       +> ListDeclVar [List with 1 elements]
+// @expected_tree       |  []> [2, 6] DeclVar
+// @expected_tree       |      +> [2, 0] Identifier (float)
+// @expected_tree       |      |  definition: type (builtin), type=float
+// @expected_tree       |      +> [2, 6] Identifier (i)
+// @expected_tree       |      |  definition: variable defined at [2, 6], type=float
+// @expected_tree       |      `> Initialization
+// @expected_tree       |         `> ConvFloat
+// @expected_tree       |            type: float
+// @expected_tree       |            `> [2, 10] Int (4)
+// @expected_tree       |               type: int
+// @expected_tree       `> ListInst [List with 0 elements]

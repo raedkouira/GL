@@ -1,0 +1,35 @@
+// @result ok
+// @result ok
+// @result ok
+// @result ok
+{
+        boolean a = false && false;
+        boolean b = false && true;
+        boolean c = true && false;
+        boolean d = true || true;
+           
+        if (a) {
+                println("ko");
+        } else { 
+                println("ok");
+        }
+        
+        if (b) {
+                println("ko");
+        } else {
+                println("ok");
+        }
+
+        if (c) {
+                println("ko");
+        } else {
+                println("ok");
+        }
+
+        if (d) {
+                println("ok");
+        } else {
+                println("ko");
+        
+	}
+}

@@ -1,0 +1,50 @@
+// @result 1
+// @result 1.10000e+00
+// @result ok
+// @result ok
+/*
+Testing for successive method calls in variable assignment
+*/
+class A{}
+class X {
+        int a() {
+		return 1;
+	}
+        float b() {
+		return 1.1;
+	}
+        boolean c() {
+		return true;
+	}
+        A d() {
+		return new A();
+	}
+}
+class Y {
+        X x() {
+		return new X();
+	}
+}
+{
+        Y y = new Y();
+	
+	int a = 0;
+	float b = 0.0;
+	boolean c = false;
+	A d = null;
+
+        a = y.x().a();
+        b = y.x().b();
+        c = y.x().c();
+        d = y.x().d();
+
+        println(a);
+        println(b);
+        if (c) {
+                println("ok");
+        }
+        if (d != null) {
+                println("ok");
+        }
+}
+

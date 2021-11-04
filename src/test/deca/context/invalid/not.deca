@@ -1,0 +1,4 @@
+{
+boolean x = !4;
+}
+// @expected_output deca:2:13: Invalid type for operand: int instead of boolean

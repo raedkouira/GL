@@ -1,0 +1,12 @@
+/*
+    Description : Tests sur la conversion de booléen
+
+    Résultat : erreur renvoyée
+*/
+{
+    boolean x = true;
+    boolean y = true;
+    int z = y + x;
+}
+
+// @expected_output deca:9:12: Rvalue is of type boolean and leftOperand is of type int

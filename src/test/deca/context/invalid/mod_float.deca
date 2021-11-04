@@ -1,0 +1,9 @@
+/*
+    Description : Test si l'application d'un modulo à des nombres flottants provoque bien une erreur de compilation
+
+    Résultat : deca:7:4
+*/
+{
+    0.5%-0.5;
+}
+// @expected_output deca:7:4: 

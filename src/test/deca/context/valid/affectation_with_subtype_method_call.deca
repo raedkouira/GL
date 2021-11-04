@@ -1,0 +1,16 @@
+/*
+    Description : Test sur l'affectation avec un appel de méthode retournant un sous type de classe
+
+    Résultat : OK (règle 3.41)
+*/
+
+class C{}
+class B extends C{}
+
+class A{
+    B x(){
+        return new B();
+    }
+
+    C y = x();
+}

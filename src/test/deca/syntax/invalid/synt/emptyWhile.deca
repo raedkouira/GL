@@ -1,0 +1,4 @@
+// @expected_output deca:3:10:
+{
+    while() {}
+}

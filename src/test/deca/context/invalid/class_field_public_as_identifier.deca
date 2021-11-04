@@ -1,0 +1,9 @@
+/*
+    Description: Test sur la déclaration d'un attribut de classe avec la visibilité public mais sans type
+
+    Résultat : erreur contextuelle (deca:7:4)
+*/
+class C{
+    public x;
+}
+// @expected_output deca:7:4

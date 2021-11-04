@@ -1,0 +1,9 @@
+/*
+    Description : Déclaration d'une classe après le bloc main
+
+    Résultat : erreur syntaxique (deca:8:0)
+*/
+{
+}
+class A{}
+// @expected_output deca:8:0

@@ -1,0 +1,26 @@
+// @result 2
+// @result 2.20000e+00
+/*
+Test for successive method calls in variable declarations
+*/
+class X {
+        int a() {
+		return 1;
+	}
+        float b() {
+		return 1.1;
+	}
+}
+class Y {
+	X x() {
+		return new X();
+	}
+}
+{
+        Y y = new Y();
+        int a = 1 + y.x().a();
+        float b = 1.1 + y.x().b();
+
+        println(a);
+        println(b);
+}

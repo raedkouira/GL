@@ -1,0 +1,27 @@
+{
+    1+1;
+    1-1;
+    1*1;
+    1/1;
+    1%1;
+}
+// @expected_tree `> [1, 0] Program
+// @expected_tree    +> ListDeclClass [List with 0 elements]
+// @expected_tree    `> [1, 0] Main
+// @expected_tree       +> ListDeclVar [List with 0 elements]
+// @expected_tree       `> ListInst [List with 5 elements]
+// @expected_tree          []> [2, 4] Plus
+// @expected_tree          ||  +> [2, 4] Int (1)
+// @expected_tree          ||  `> [2, 6] Int (1)
+// @expected_tree          []> [3, 4] Minus
+// @expected_tree          ||  +> [3, 4] Int (1)
+// @expected_tree          ||  `> [3, 6] Int (1)
+// @expected_tree          []> [4, 4] Multiply
+// @expected_tree          ||  +> [4, 4] Int (1)
+// @expected_tree          ||  `> [4, 6] Int (1)
+// @expected_tree          []> [5, 4] Divide
+// @expected_tree          ||  +> [5, 4] Int (1)
+// @expected_tree          ||  `> [5, 6] Int (1)
+// @expected_tree          []> [6, 4] Modulo
+// @expected_tree              +> [6, 4] Int (1)
+// @expected_tree              `> [6, 6] Int (1)

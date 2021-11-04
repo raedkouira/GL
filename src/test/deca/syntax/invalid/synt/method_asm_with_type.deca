@@ -1,0 +1,9 @@
+/*
+    Description: Declaration d'une methode asm avec un type de retour
+
+    Résultat : erreur syntaxique deca:7:9
+*/
+class A{
+    void asm("aaa");
+}
+// @expected_output deca:7:9: no viable alternative at input 'voidasm'

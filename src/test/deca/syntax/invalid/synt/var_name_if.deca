@@ -1,0 +1,9 @@
+// @expected_output deca:8:8:
+/*
+    Description : Test sur un déclaration de variable avec un nom réservé
+    
+    Résultat : rejeté à l'analyse syntaxique
+*/
+{
+    int if = 2;
+}

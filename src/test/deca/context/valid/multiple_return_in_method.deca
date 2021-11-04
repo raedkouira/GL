@@ -1,0 +1,11 @@
+/*
+    Description : Plusieurs instructions return dans une méthode
+
+    Résultat : OK
+*/
+class A{
+    int r(){
+        return 1;
+        return 2;
+    }
+}

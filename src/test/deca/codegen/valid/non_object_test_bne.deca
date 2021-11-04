@@ -1,0 +1,31 @@
+// @result ok
+// @result ok
+// @result ok
+// @result ok
+{
+        if (1 != 2) {
+                println("ok");
+        }
+        else {
+                println("ko");
+        }
+
+        if (2 != 2) {
+                println("ko");
+        } else {
+                println("ok");
+        }
+
+        if (!(2 != 2)) {
+                println("ok");
+        } else {
+                println("ko");
+        }
+
+        if (!(1 != 2)) {
+                println("ko");
+        } else {
+                println("ok");
+        }
+}
+

@@ -1,0 +1,10 @@
+/*
+    Description : Utilisation d'un attribut de classe tel qu'une méthode
+
+    Résultat: Erreur contextuelle (deca:8:12)
+*/
+class A{
+    int x = 1;
+    int y = x();
+}
+// @expected_output deca:8:12

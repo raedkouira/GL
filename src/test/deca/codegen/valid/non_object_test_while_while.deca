@@ -1,0 +1,15 @@
+// @result 512
+{
+	int x = 0;
+	int y;
+	int z = 1;
+	while (x < 3) {
+		y = 0;
+		while (y < 3) {
+			z = z * 2;
+			y = y + 1;
+		}
+		x = x + 1;
+	}
+	print(z);
+}

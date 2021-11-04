@@ -1,0 +1,13 @@
+/*
+    Description : Appel d'une méthode de la superclasse
+
+    Résultat : OK
+*/
+class A{
+    boolean x(){
+        return true;
+    }
+}
+class B extends A{
+    boolean b = x();
+}

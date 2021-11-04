@@ -1,0 +1,12 @@
+// @result ok
+{
+	if (true) {
+		if (false) {
+			print("ko");
+		} else {
+			print("ok");
+		}
+	} else {
+		print("ko");
+	}
+}

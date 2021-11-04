@@ -1,0 +1,11 @@
+/*
+    Description : Redéfinition d'une méthode en ajoutant des paramètres
+
+    Résultat : Erreur contextuelle
+*/
+class A{
+    void x(int a, int b){}
+}
+class B extends A{
+    void x(int a, int b, int c){}
+}

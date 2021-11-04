@@ -1,0 +1,1072 @@
+; start main program
+	ADDSP #21
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.Math._throwError, R0
+	STORE R0, 5(GB)
+	LOAD code.Math._sqrt, R0
+	STORE R0, 6(GB)
+	LOAD code.Math._moduloF, R0
+	STORE R0, 7(GB)
+	LOAD code.Math._sinPI4, R0
+	STORE R0, 8(GB)
+	LOAD code.Math._cosPI4, R0
+	STORE R0, 9(GB)
+	LOAD code.Math._sinPI2, R0
+	STORE R0, 10(GB)
+	LOAD code.Math._cosPI2, R0
+	STORE R0, 11(GB)
+	LOAD code.Math.sin, R0
+	STORE R0, 12(GB)
+	LOAD code.Math.cos, R0
+	STORE R0, 13(GB)
+	LOAD code.Math.atan, R0
+	STORE R0, 14(GB)
+	LOAD code.Math.asin, R0
+	STORE R0, 15(GB)
+	LOAD code.Math.ulp, R0
+	STORE R0, 16(GB)
+; Beginning of main instructions:
+; Math m = new Math();
+	LOAD #null, R2
+	STORE R2, 17(GB)
+	NEW #6, R2
+	LEA 3(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.Math
+	POP R2
+	STORE R2, 17(GB)
+; float begin = -0x1.0p0;
+	LOAD #0x1.0p0, R2
+	OPP R2, R2
+	STORE R2, 18(GB)
+; float end = 0x1.0p0;
+	LOAD #0x1.0p0, R2
+	STORE R2, 19(GB)
+; int N = 1000;
+	LOAD #1000, R2
+	STORE R2, 20(GB)
+; float step = end - begin / /* conv float */N;
+	LOAD 19(GB), R2
+	SUB 18(GB), R2
+	LOAD 20(GB), R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	DIV R3, R2
+	BOV div_by_zero
+	STORE R2, 21(GB)
+; while instruction
+	BRA while_cond_5
+begin_while_5:
+; print(ln) begin
+	LOAD 18(GB), R2
+	LOAD R2, R1
+	WFLOAT
+	WSTR " "
+; print(ln) masinbegin
+	LOAD 17(GB), R2
+	ADDSP #2
+	STORE R2, 0(SP)
+	LOAD 18(GB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ null_object
+	LOAD 0(R2), R2
+	BSR 12(R2)
+	SUBSP #2
+	LOAD R1, R2
+	LOAD R2, R1
+	WFLOAT
+	WNL
+; begin = begin + step
+	LOAD 18(GB), R2
+	ADD 21(GB), R2
+	STORE R2, 18(GB)
+while_cond_5:
+	LOAD 18(GB), R2
+	CMP 19(GB), R2
+	BLT begin_while_5
+	HALT
+stack_overflow:
+	WSTR "Error: Stack overflow"
+	WNL
+	ERROR
+heap_overflow:
+	WSTR "Error: Impossible allocation : heap overflow"
+	WNL
+	ERROR
+div_by_zero:
+	WSTR "Error: Division by zero"
+	WNL
+	ERROR
+overflow:
+	WSTR "Error: Overflow during arithmetic operation"
+	WNL
+	ERROR
+invalid_input:
+	WSTR "Error: Invalid input"
+	WNL
+	ERROR
+null_object:
+	WSTR "Error: Cannot acces null object"
+	WNL
+	ERROR
+impossible_conv_float:
+	WSTR "Error: Impossible converion to float"
+	WNL
+	ERROR
+init.Object:
+	RTS
+code.Object.equals:
+	TSTO #1
+	BOV stack_overflow
+	PUSH R2
+	LOAD -2(LB), R2
+	CMP -3(LB), R2
+	SEQ R1
+end.Object.equals:
+	POP R2
+	RTS
+init.Math:
+	PUSH R2
+	LOAD #0x0.0p0, R2
+	LOAD -2(LB), R1
+	STORE R2, 1(R1)
+	LOAD #0x0.0p0, R2
+	LOAD -2(LB), R1
+	STORE R2, 2(R1)
+	LOAD #0x0.0p0, R2
+	LOAD -2(LB), R1
+	STORE R2, 3(R1)
+	LOAD #0x0.0p0, R2
+	LOAD -2(LB), R1
+	STORE R2, 4(R1)
+	LOAD #0x0.0p0, R2
+	LOAD -2(LB), R1
+	STORE R2, 5(R1)
+	LOAD #0x1.921fb6p2, R2
+	LOAD -2(LB), R1
+	STORE R2, 1(R1)
+	LOAD #0x1.921fb6p1, R2
+	LOAD -2(LB), R1
+	STORE R2, 2(R1)
+	LOAD #0x1.921fb6p0, R2
+	LOAD -2(LB), R1
+	STORE R2, 3(R1)
+	LOAD #0x1.921fb6p-1, R2
+	LOAD -2(LB), R1
+	STORE R2, 4(R1)
+	LOAD #0x1.0p-23, R2
+	LOAD -2(LB), R1
+	STORE R2, 5(R1)
+	POP R2
+	RTS
+code.Math._throwError:
+HALT
+end.Math._throwError:
+	RTS
+code.Math._sqrt:
+	ADDSP #2
+	PUSH R4
+	PUSH R3
+	PUSH R2
+; int i;
+; float x;
+; if instruction
+	LOAD -3(LB), R2
+	LOAD #0, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	CMP R3, R2
+	BGE else_0
+	WSTR "illegal parameter for sqrt, parameter must be positive, exiting..."
+	WNL
+	LOAD -2(LB), R2
+	ADDSP #1
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ null_object
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #1
+	LOAD R1, R2
+	BRA end_if_0
+else_0:
+; if instruction
+	LOAD -3(LB), R2
+	LOAD #0, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	CMP R3, R2
+	BGE else_1
+	BRA end_if_1
+else_1:
+; i = 0
+	LOAD #0, R2
+	STORE R2, 1(LB)
+; x = 0x1.99999ap-4
+	LOAD #0x1.99999ap-4, R2
+	STORE R2, 2(LB)
+; while instruction
+	BRA while_cond_0
+begin_while_0:
+; x = 0x1.0p-1 * x + f / x
+	LOAD #0x1.0p-1, R2
+	LOAD 2(LB), R3
+	LOAD -3(LB), R4
+	DIV 2(LB), R4
+	BOV div_by_zero
+	ADD R4, R3
+	MUL R3, R2
+	STORE R2, 2(LB)
+; i = i + 1
+	LOAD 1(LB), R2
+	ADD #1, R2
+	STORE R2, 1(LB)
+while_cond_0:
+	LOAD 1(LB), R2
+	CMP #15, R2
+	BLT begin_while_0
+; return x;
+	LOAD 2(LB), R2
+	LOAD R2, R1
+	BRA end.Math._sqrt
+end_if_1:
+end_if_0:
+	WSTR "Error : exiting function Math._sqrt without return instruction"
+	WNL
+	ERROR
+end.Math._sqrt:
+	POP R2
+	POP R3
+	POP R4
+	RTS
+code.Math._moduloF:
+	PUSH R3
+	PUSH R2
+; if instruction
+	LOAD -3(LB), R2
+	LOAD #0, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	CMP R3, R2
+	BGE else_2
+; f = -f
+	LOAD -3(LB), R2
+	OPP R2, R2
+	STORE R2, -3(LB)
+	BRA end_if_2
+else_2:
+end_if_2:
+; while instruction
+	BRA while_cond_1
+begin_while_1:
+; f = f - p
+	LOAD -3(LB), R2
+	SUB -4(LB), R2
+	STORE R2, -3(LB)
+while_cond_1:
+	LOAD -3(LB), R2
+	CMP -4(LB), R2
+	BGE begin_while_1
+; return f;
+	LOAD -3(LB), R2
+	LOAD R2, R1
+	BRA end.Math._moduloF
+	WSTR "Error : exiting function Math._moduloF without return instruction"
+	WNL
+	ERROR
+end.Math._moduloF:
+	POP R2
+	POP R3
+	RTS
+code.Math._sinPI4:
+	ADDSP #4
+	PUSH R3
+	PUSH R2
+; float a = -0x1.0p0 / /* conv float */5040;
+	LOAD #0x1.0p0, R2
+	OPP R2, R2
+	LOAD #5040, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	DIV R3, R2
+	BOV div_by_zero
+	STORE R2, 1(LB)
+; float b = 0x1.0p0 / /* conv float */120;
+	LOAD #0x1.0p0, R2
+	LOAD #120, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	DIV R3, R2
+	BOV div_by_zero
+	STORE R2, 2(LB)
+; float c = -0x1.0p0 / /* conv float */6;
+	LOAD #0x1.0p0, R2
+	OPP R2, R2
+	LOAD #6, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	DIV R3, R2
+	BOV div_by_zero
+	STORE R2, 3(LB)
+; float d = 0x1.0p0;
+	LOAD #0x1.0p0, R2
+	STORE R2, 4(LB)
+; return a * f * f + b * f * f + c * f * f + d * f;
+	LOAD 1(LB), R2
+	MUL -3(LB), R2
+	MUL -3(LB), R2
+	ADD 2(LB), R2
+	MUL -3(LB), R2
+	MUL -3(LB), R2
+	ADD 3(LB), R2
+	MUL -3(LB), R2
+	MUL -3(LB), R2
+	ADD 4(LB), R2
+	MUL -3(LB), R2
+	LOAD R2, R1
+	BRA end.Math._sinPI4
+	WSTR "Error : exiting function Math._sinPI4 without return instruction"
+	WNL
+	ERROR
+end.Math._sinPI4:
+	POP R2
+	POP R3
+	RTS
+code.Math._cosPI4:
+	ADDSP #4
+	PUSH R3
+	PUSH R2
+; float a = 0x1.0p0 / /* conv float */40320;
+	LOAD #0x1.0p0, R2
+	LOAD #40320, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	DIV R3, R2
+	BOV div_by_zero
+	STORE R2, 1(LB)
+; float b = -0x1.0p0 / /* conv float */720;
+	LOAD #0x1.0p0, R2
+	OPP R2, R2
+	LOAD #720, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	DIV R3, R2
+	BOV div_by_zero
+	STORE R2, 2(LB)
+; float c = 0x1.0p0 / /* conv float */24;
+	LOAD #0x1.0p0, R2
+	LOAD #24, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	DIV R3, R2
+	BOV div_by_zero
+	STORE R2, 3(LB)
+; float d = -0x1.0p0 / /* conv float */2;
+	LOAD #0x1.0p0, R2
+	OPP R2, R2
+	LOAD #2, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	DIV R3, R2
+	BOV div_by_zero
+	STORE R2, 4(LB)
+; return a * f * f + b * f * f + c * f * f + d * f * f + /* conv float */1;
+	LOAD 1(LB), R2
+	MUL -3(LB), R2
+	MUL -3(LB), R2
+	ADD 2(LB), R2
+	MUL -3(LB), R2
+	MUL -3(LB), R2
+	ADD 3(LB), R2
+	MUL -3(LB), R2
+	MUL -3(LB), R2
+	ADD 4(LB), R2
+	MUL -3(LB), R2
+	MUL -3(LB), R2
+	LOAD #1, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	ADD R3, R2
+	LOAD R2, R1
+	BRA end.Math._cosPI4
+	WSTR "Error : exiting function Math._cosPI4 without return instruction"
+	WNL
+	ERROR
+end.Math._cosPI4:
+	POP R2
+	POP R3
+	RTS
+code.Math._sinPI2:
+	PUSH R3
+	PUSH R2
+; if instruction
+	LOAD -3(LB), R2
+	LOAD -2(LB), R3
+	LOAD 4(R3), R3
+	CMP R3, R2
+	BLE else_3
+; return this_cosPI4pi2 - f;
+	LOAD -2(LB), R2
+	ADDSP #2
+	STORE R2, 0(SP)
+	LOAD -2(LB), R2
+	LOAD 3(R2), R2
+	SUB -3(LB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ null_object
+	LOAD 0(R2), R2
+	BSR 6(R2)
+	SUBSP #2
+	LOAD R1, R2
+	LOAD R2, R1
+	BRA end.Math._sinPI2
+	BRA end_if_3
+else_3:
+; if instruction
+	LOAD -3(LB), R2
+	LOAD -2(LB), R3
+	LOAD 4(R3), R3
+	CMP R3, R2
+	BLE else_4
+	BRA end_if_4
+else_4:
+; return this_sinPI4f;
+	LOAD -2(LB), R2
+	ADDSP #2
+	STORE R2, 0(SP)
+	LOAD -3(LB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ null_object
+	LOAD 0(R2), R2
+	BSR 5(R2)
+	SUBSP #2
+	LOAD R1, R2
+	LOAD R2, R1
+	BRA end.Math._sinPI2
+end_if_4:
+end_if_3:
+	WSTR "Error : exiting function Math._sinPI2 without return instruction"
+	WNL
+	ERROR
+end.Math._sinPI2:
+	POP R2
+	POP R3
+	RTS
+code.Math._cosPI2:
+	PUSH R3
+	PUSH R2
+; if instruction
+	LOAD -3(LB), R2
+	LOAD -2(LB), R3
+	LOAD 4(R3), R3
+	CMP R3, R2
+	BLE else_5
+; return this_sinPI4pi2 - f;
+	LOAD -2(LB), R2
+	ADDSP #2
+	STORE R2, 0(SP)
+	LOAD -2(LB), R2
+	LOAD 3(R2), R2
+	SUB -3(LB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ null_object
+	LOAD 0(R2), R2
+	BSR 5(R2)
+	SUBSP #2
+	LOAD R1, R2
+	LOAD R2, R1
+	BRA end.Math._cosPI2
+	BRA end_if_5
+else_5:
+; if instruction
+	LOAD -3(LB), R2
+	LOAD -2(LB), R3
+	LOAD 4(R3), R3
+	CMP R3, R2
+	BLE else_6
+	BRA end_if_6
+else_6:
+; return this_cosPI4f;
+	LOAD -2(LB), R2
+	ADDSP #2
+	STORE R2, 0(SP)
+	LOAD -3(LB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ null_object
+	LOAD 0(R2), R2
+	BSR 6(R2)
+	SUBSP #2
+	LOAD R1, R2
+	LOAD R2, R1
+	BRA end.Math._cosPI2
+end_if_6:
+end_if_5:
+	WSTR "Error : exiting function Math._cosPI2 without return instruction"
+	WNL
+	ERROR
+end.Math._cosPI2:
+	POP R2
+	POP R3
+	RTS
+code.Math.sin:
+	ADDSP #1
+	PUSH R4
+	PUSH R3
+	PUSH R2
+; float sign = 0x1.0p0;
+	LOAD #0x1.0p0, R2
+	STORE R2, 1(LB)
+; if instruction
+	LOAD -3(LB), R2
+	LOAD #0, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	CMP R3, R2
+	BGE else_7
+; f = -f
+	LOAD -3(LB), R2
+	OPP R2, R2
+	STORE R2, -3(LB)
+; sign = /* conv float */-1 * sign
+	LOAD #1, R2
+	OPP R2, R2
+	FLOAT R2, R2
+	BOV impossible_conv_float
+	MUL 1(LB), R2
+	STORE R2, 1(LB)
+	BRA end_if_7
+else_7:
+end_if_7:
+; f = this_moduloFf, _2pi
+	LOAD -2(LB), R2
+	ADDSP #3
+	STORE R2, 0(SP)
+	LOAD -3(LB), R2
+	STORE R2, -1(SP)
+	LOAD -2(LB), R2
+	LOAD 1(R2), R2
+	STORE R2, -2(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ null_object
+	LOAD 0(R2), R2
+	BSR 4(R2)
+	SUBSP #3
+	LOAD R1, R2
+	STORE R2, -3(LB)
+; if instruction
+	LOAD -3(LB), R2
+	LOAD -2(LB), R3
+	LOAD 2(R3), R3
+	CMP R3, R2
+	BLE else_8
+; f = f - pi
+	LOAD -3(LB), R2
+	LOAD -2(LB), R3
+	LOAD 2(R3), R3
+	SUB R3, R2
+	STORE R2, -3(LB)
+; sign = /* conv float */-1 * sign
+	LOAD #1, R2
+	OPP R2, R2
+	FLOAT R2, R2
+	BOV impossible_conv_float
+	MUL 1(LB), R2
+	STORE R2, 1(LB)
+	BRA end_if_8
+else_8:
+end_if_8:
+; if instruction
+	LOAD -3(LB), R2
+	LOAD -2(LB), R3
+	LOAD 3(R3), R3
+	CMP R3, R2
+	BLE else_9
+; return sign * this_cosPI2f - pi2;
+	LOAD 1(LB), R2
+	LOAD -2(LB), R3
+	ADDSP #2
+	STORE R3, 0(SP)
+	LOAD -3(LB), R3
+	LOAD -2(LB), R4
+	LOAD 3(R4), R4
+	SUB R4, R3
+	STORE R3, -1(SP)
+	LOAD 0(SP), R3
+	CMP #null, R3
+	BEQ null_object
+	LOAD 0(R3), R3
+	BSR 8(R3)
+	SUBSP #2
+	LOAD R1, R3
+	MUL R3, R2
+	LOAD R2, R1
+	BRA end.Math.sin
+	BRA end_if_9
+else_9:
+end_if_9:
+; return sign * this_sinPI2f;
+	LOAD 1(LB), R2
+	LOAD -2(LB), R3
+	ADDSP #2
+	STORE R3, 0(SP)
+	LOAD -3(LB), R3
+	STORE R3, -1(SP)
+	LOAD 0(SP), R3
+	CMP #null, R3
+	BEQ null_object
+	LOAD 0(R3), R3
+	BSR 7(R3)
+	SUBSP #2
+	LOAD R1, R3
+	MUL R3, R2
+	LOAD R2, R1
+	BRA end.Math.sin
+	WSTR "Error : exiting function Math.sin without return instruction"
+	WNL
+	ERROR
+end.Math.sin:
+	POP R2
+	POP R3
+	POP R4
+	RTS
+code.Math.cos:
+	PUSH R3
+	PUSH R2
+; return thissinf + pi2;
+	LOAD -2(LB), R2
+	ADDSP #2
+	STORE R2, 0(SP)
+	LOAD -3(LB), R2
+	LOAD -2(LB), R3
+	LOAD 3(R3), R3
+	ADD R3, R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ null_object
+	LOAD 0(R2), R2
+	BSR 9(R2)
+	SUBSP #2
+	LOAD R1, R2
+	LOAD R2, R1
+	BRA end.Math.cos
+	WSTR "Error : exiting function Math.cos without return instruction"
+	WNL
+	ERROR
+end.Math.cos:
+	POP R2
+	POP R3
+	RTS
+code.Math.atan:
+	ADDSP #4
+	PUSH R4
+	PUSH R3
+	PUSH R2
+; float outp = 0x0.0p0;
+	LOAD #0x0.0p0, R2
+	STORE R2, 1(LB)
+; int i = 0;
+	LOAD #0, R2
+	STORE R2, 2(LB)
+; float cosValue;
+; float sinValue;
+; if instruction
+	LOAD -3(LB), R2
+	LOAD #0, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	CMP R3, R2
+	BGE else_10
+; return -thisatan-f;
+	LOAD -2(LB), R2
+	ADDSP #2
+	STORE R2, 0(SP)
+	LOAD -3(LB), R2
+	OPP R2, R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ null_object
+	LOAD 0(R2), R2
+	BSR 11(R2)
+	SUBSP #2
+	LOAD R1, R2
+	OPP R2, R2
+	LOAD R2, R1
+	BRA end.Math.atan
+	BRA end_if_10
+else_10:
+; if instruction
+	LOAD -3(LB), R2
+	LOAD #1, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	CMP R3, R2
+	BLE else_11
+; return pi2 - thisatan/* conv float */1 / f;
+	LOAD -2(LB), R2
+	LOAD 3(R2), R2
+	LOAD -2(LB), R3
+	ADDSP #2
+	STORE R3, 0(SP)
+	LOAD #1, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	DIV -3(LB), R3
+	BOV div_by_zero
+	STORE R3, -1(SP)
+	LOAD 0(SP), R3
+	CMP #null, R3
+	BEQ null_object
+	LOAD 0(R3), R3
+	BSR 11(R3)
+	SUBSP #2
+	LOAD R1, R3
+	SUB R3, R2
+	LOAD R2, R1
+	BRA end.Math.atan
+	BRA end_if_11
+else_11:
+; if instruction
+	LOAD -3(LB), R2
+	LOAD #0, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	CMP R3, R2
+	BGE else_12
+	BRA end_if_12
+else_12:
+; while instruction
+	BRA while_cond_2
+begin_while_2:
+; sinValue = thissinoutp
+	LOAD -2(LB), R2
+	ADDSP #2
+	STORE R2, 0(SP)
+	LOAD 1(LB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ null_object
+	LOAD 0(R2), R2
+	BSR 9(R2)
+	SUBSP #2
+	LOAD R1, R2
+	STORE R2, 4(LB)
+; cosValue = thiscosoutp
+	LOAD -2(LB), R2
+	ADDSP #2
+	STORE R2, 0(SP)
+	LOAD 1(LB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ null_object
+	LOAD 0(R2), R2
+	BSR 10(R2)
+	SUBSP #2
+	LOAD R1, R2
+	STORE R2, 3(LB)
+; outp = outp + cosValue * cosValue * f - sinValue
+	LOAD 1(LB), R2
+	LOAD 3(LB), R3
+	LOAD 3(LB), R4
+	MUL -3(LB), R4
+	SUB 4(LB), R4
+	MUL R4, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+; i = i + 1
+	LOAD 2(LB), R2
+	ADD #1, R2
+	STORE R2, 2(LB)
+while_cond_2:
+	LOAD 2(LB), R2
+	CMP #10, R2
+	BLT begin_while_2
+; return outp;
+	LOAD 1(LB), R2
+	LOAD R2, R1
+	BRA end.Math.atan
+end_if_12:
+end_if_11:
+end_if_10:
+	WSTR "Error : exiting function Math.atan without return instruction"
+	WNL
+	ERROR
+end.Math.atan:
+	POP R2
+	POP R3
+	POP R4
+	RTS
+code.Math.asin:
+	PUSH R4
+	PUSH R3
+	PUSH R2
+; if instruction
+	LOAD -3(LB), R2
+	LOAD #1, R3
+	OPP R3, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	CMP R3, R2
+	BLT end_and_0
+	LOAD -3(LB), R2
+	LOAD #1, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	CMP R3, R2
+	BLE else_13
+end_and_0:
+	WSTR "illegal parameter : asin can only be computed for numbers within (-1, 1), exiting..."
+	WNL
+	LOAD -2(LB), R2
+	ADDSP #1
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ null_object
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #1
+	LOAD R1, R2
+	BRA end_if_13
+else_13:
+; if instruction
+	LOAD -3(LB), R2
+	LOAD #1, R3
+	OPP R3, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	CMP R3, R2
+	BNE else_14
+; return -pi2;
+	LOAD -2(LB), R2
+	LOAD 3(R2), R2
+	OPP R2, R2
+	LOAD R2, R1
+	BRA end.Math.asin
+	BRA end_if_14
+else_14:
+; if instruction
+	LOAD -3(LB), R2
+	LOAD #1, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	CMP R3, R2
+	BNE else_15
+; return pi2;
+	LOAD -2(LB), R2
+	LOAD 3(R2), R2
+	LOAD R2, R1
+	BRA end.Math.asin
+	BRA end_if_15
+else_15:
+; if instruction
+	LOAD -3(LB), R2
+	LOAD #1, R3
+	OPP R3, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	CMP R3, R2
+	BLT end_and_1
+	LOAD -3(LB), R2
+	LOAD #1, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	CMP R3, R2
+	BLE else_16
+end_and_1:
+	BRA end_if_16
+else_16:
+; return thisatanf / this_sqrt/* conv float */1 - f * f;
+	LOAD -2(LB), R2
+	ADDSP #2
+	STORE R2, 0(SP)
+	LOAD -3(LB), R2
+	LOAD -2(LB), R3
+	ADDSP #2
+	STORE R3, 0(SP)
+	LOAD #1, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	LOAD -3(LB), R4
+	MUL -3(LB), R4
+	SUB R4, R3
+	STORE R3, -1(SP)
+	LOAD 0(SP), R3
+	CMP #null, R3
+	BEQ null_object
+	LOAD 0(R3), R3
+	BSR 3(R3)
+	SUBSP #2
+	LOAD R1, R3
+	DIV R3, R2
+	BOV div_by_zero
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ null_object
+	LOAD 0(R2), R2
+	BSR 11(R2)
+	SUBSP #2
+	LOAD R1, R2
+	LOAD R2, R1
+	BRA end.Math.asin
+end_if_16:
+end_if_15:
+end_if_14:
+end_if_13:
+	WSTR "Error : exiting function Math.asin without return instruction"
+	WNL
+	ERROR
+end.Math.asin:
+	POP R2
+	POP R3
+	POP R4
+	RTS
+code.Math.ulp:
+	ADDSP #1
+	PUSH R3
+	PUSH R2
+; float tmp = 0x1.0p0;
+	LOAD #0x1.0p0, R2
+	STORE R2, 1(LB)
+; if instruction
+	LOAD -3(LB), R2
+	LOAD #0, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	CMP R3, R2
+	BGE else_17
+; return thisulp-f;
+	LOAD -2(LB), R2
+	ADDSP #2
+	STORE R2, 0(SP)
+	LOAD -3(LB), R2
+	OPP R2, R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ null_object
+	LOAD 0(R2), R2
+	BSR 13(R2)
+	SUBSP #2
+	LOAD R1, R2
+	LOAD R2, R1
+	BRA end.Math.ulp
+	BRA end_if_17
+else_17:
+; if instruction
+	LOAD #0x1.0p0, R2
+	CMP -3(LB), R2
+	BGE else_18
+	LOAD -3(LB), R2
+	CMP #0x1.0p1, R2
+	BGE else_18
+; return zMach * tmp;
+	LOAD -2(LB), R2
+	LOAD 5(R2), R2
+	MUL 1(LB), R2
+	LOAD R2, R1
+	BRA end.Math.ulp
+	BRA end_if_18
+else_18:
+; if instruction
+	LOAD -3(LB), R2
+	CMP #0x1.0p0, R2
+	BGE else_19
+; while instruction
+	BRA while_cond_3
+begin_while_3:
+; f = f * /* conv float */2
+	LOAD -3(LB), R2
+	LOAD #2, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	MUL R3, R2
+	STORE R2, -3(LB)
+; tmp = tmp / /* conv float */2
+	LOAD 1(LB), R2
+	LOAD #2, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	DIV R3, R2
+	BOV div_by_zero
+	STORE R2, 1(LB)
+while_cond_3:
+	LOAD -3(LB), R2
+	CMP #0x1.0p0, R2
+	BLT begin_while_3
+	BRA end_if_19
+else_19:
+; if instruction
+	LOAD -3(LB), R2
+	LOAD #0, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	CMP R3, R2
+	BGE else_20
+	BRA end_if_20
+else_20:
+; while instruction
+	BRA while_cond_4
+begin_while_4:
+; f = f / /* conv float */2
+	LOAD -3(LB), R2
+	LOAD #2, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	DIV R3, R2
+	BOV div_by_zero
+	STORE R2, -3(LB)
+; tmp = tmp * /* conv float */2
+	LOAD 1(LB), R2
+	LOAD #2, R3
+	FLOAT R3, R3
+	BOV impossible_conv_float
+	MUL R3, R2
+	STORE R2, 1(LB)
+while_cond_4:
+	LOAD -3(LB), R2
+	CMP #0x1.0p1, R2
+	BGT begin_while_4
+end_if_20:
+end_if_19:
+end_if_18:
+end_if_17:
+; return tmp * zMach;
+	LOAD 1(LB), R2
+	LOAD -2(LB), R3
+	LOAD 5(R3), R3
+	MUL R3, R2
+	LOAD R2, R1
+	BRA end.Math.ulp
+	WSTR "Error : exiting function Math.ulp without return instruction"
+	WNL
+	ERROR
+end.Math.ulp:
+	POP R2
+	POP R3
+	RTS
+; end main program

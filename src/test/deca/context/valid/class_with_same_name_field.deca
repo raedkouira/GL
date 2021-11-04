@@ -1,0 +1,10 @@
+/*
+    Description : Classe avec un champ du même nom qu'une classe
+
+    Résultat: OK (règle 2.5)
+*/
+class A{
+}
+class B{
+    A a;
+}

@@ -1,0 +1,15 @@
+// @result OK
+/*
+    Description : Appel d'une méthode dans le main affichant OK
+
+    Résultat : OK
+*/
+class A{
+    void b(){
+        println("OK");
+    }
+}
+{
+    A i = new A();
+    i.b();
+}

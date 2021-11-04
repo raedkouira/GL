@@ -1,0 +1,20 @@
+/*
+    Description : Utilisation d'un appel de méthode retournant un booléen au sein d'un if
+
+    Résultat: OK
+*/
+class A
+{
+    int x;
+    boolean u = true;
+
+    boolean c(){
+        return u;
+    }
+
+    void t(){
+        if (c()){
+            x = 2;
+        }
+    }
+}

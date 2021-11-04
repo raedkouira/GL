@@ -1,0 +1,10 @@
+/*
+    Description : identifiant du nom boolean
+
+    Résultat : OK
+*/
+
+class A{
+    int boolean;
+    boolean b = false;
+}

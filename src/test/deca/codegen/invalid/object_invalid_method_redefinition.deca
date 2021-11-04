@@ -1,0 +1,13 @@
+/*
+    Description : Redéfinition d'une méthode sans respecter la contrainte p209 du poly : "Lors d’un héritage ou d’une redéfinition, les deux méthodes doivent avoir le même indice dans les deux tableaux"
+
+    Résultat : Erreur (deca:11:4) (il semble pas possible de gérer ce cas à l'étape C donc il faut lever une erreur)
+*/
+class A{
+    void p(){}
+    void m(){}
+}
+class B extends A{
+    void p(){}
+    void q(){}
+}

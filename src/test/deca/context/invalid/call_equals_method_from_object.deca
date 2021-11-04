@@ -1,0 +1,8 @@
+/*
+    Description : Appel de la méthode equals de la superclasse Object
+
+    Résultat : OK
+*/
+class A{
+    boolean b = equals(this);
+}

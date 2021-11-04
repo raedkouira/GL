@@ -1,0 +1,8 @@
+/*
+    Description : Test sur un identifier avec le symbole dollar
+
+    Résultat : OK
+*/
+{
+    int $a;
+}

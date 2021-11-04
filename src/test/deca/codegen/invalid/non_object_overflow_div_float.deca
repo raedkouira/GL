@@ -1,0 +1,12 @@
+// @result Error: Overflow during arithmetic operation
+/*
+    Description : Test sur la gestion de l'overflow sur la division de float
+
+    Résultat : à définir...
+
+*/
+
+{
+    println(4000000000000000000000000000000000.2/0.0000000001);
+    println("Test échoué : voir p96 paragraphe 5 phrase 3 et 5");
+}

@@ -1,0 +1,11 @@
+// @result Test réussi si toute la phrase est sur la même ligne
+/*
+    Description : test si l'appel "print()" fonctionne comme attendu
+
+    Résultat : à définir
+*/
+
+{
+    print("Test réussi");
+    print(" si toute la phrase est sur la même ligne");
+}

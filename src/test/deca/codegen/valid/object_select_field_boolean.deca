@@ -1,0 +1,37 @@
+// @result ok
+// @result ok
+// @result ok
+// @result ok
+// @result ok
+// @result ok
+/*
+Test for boolean fields : boolean operations and conditions
+*/
+class X {
+	boolean a = true;
+	int b = 1;
+}
+{
+	X x = new X();
+	boolean a = x.a;
+	boolean b = !x.a;
+
+	if (a) {
+		println("ok");
+	}
+	if (!b) {
+		println("ok");
+	}
+	if (x.a) {
+		println("ok");
+	}
+	if (x.a && true) {
+		println("ok");
+	}
+	if (x.a || false) {
+		println("ok");
+	}
+	if (x.b < 2) {
+		println("ok");
+	}
+}

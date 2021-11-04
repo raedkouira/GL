@@ -1,0 +1,18 @@
+/*
+    Description : Utilisation d'une paramètre int au sein d'un if
+
+    Résultat: Erreur contextuelle (deca:10:12)
+*/
+class A{
+    int x = 1;
+    
+    void b(int a){
+        if (a){
+            x = 3;
+        }
+    }
+
+    void c(){
+        b(x);
+    }
+}

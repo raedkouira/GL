@@ -1,0 +1,4 @@
+// @result Test
+{
+	print("Test");
+}

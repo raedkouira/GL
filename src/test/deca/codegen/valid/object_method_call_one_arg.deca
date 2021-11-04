@@ -1,0 +1,48 @@
+// @result 1
+// @result 1.10000e+00
+// @result ok
+// @result 1
+// @result 1.10000e+00
+// @result ok
+// @result ok
+/*
+Testing for arguments in method calls
+*/
+class A {
+	int x = 1;
+	float y = 1.1;
+	boolean z = true;
+	void func() {
+		println("ok");
+	}
+}
+class X {
+	void a(int arg) {
+		println(arg);
+	}
+	void b(float arg) {
+		println(arg);
+	}
+	void c(boolean arg) {
+		if(arg) {
+			println("ok");
+		}
+	}
+	void d(A arg) {
+		println(arg.x);
+		println(arg.y);
+		if (arg.z) {
+			println("ok");
+		}
+		arg.func();
+	}
+}
+{
+	A a = new A();
+	X x = new X();
+
+	x.a(1);
+	x.b(1.1);
+	x.c(true);
+	x.d(a);
+}

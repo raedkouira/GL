@@ -1,0 +1,7 @@
+class Test {
+    int x = 3;
+}
+
+{
+    Test A = new Test();
+}

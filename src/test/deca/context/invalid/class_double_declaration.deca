@@ -1,0 +1,8 @@
+/*
+    Description : Test sur la gestion de la declaration de 2 meme classe
+
+    Résultat : Erreur contextuelle (deca:7:0) (cf regle 1.3 condition implicite)
+*/
+class A{}
+class A{}
+// @expected_output deca:7:

@@ -1,0 +1,9 @@
+/*
+    Description : Assignation avec new à une variable du type de celui d'une classe
+
+    Résultat : OK
+*/
+class A{}
+{
+    A r = new A();
+}

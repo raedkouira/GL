@@ -1,0 +1,14 @@
+/*
+    Description : Nommage d'une champ avec le meme nom qu'une methode de la super classe
+
+    Résultat : erreur contextuelle (deca:11:4)
+*/
+class Z{
+    void y(){}
+}
+
+class A extends Z{
+    int y;
+}
+// @expected_output deca:11:4
+

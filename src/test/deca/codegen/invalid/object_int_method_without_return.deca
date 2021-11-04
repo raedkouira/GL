@@ -1,0 +1,21 @@
+// @result 5
+// @result Error : exiting function A.y without return instruction
+/*
+    Description : Méthode int sans return 
+
+    Résultat : Erreur à l'exécution
+*/
+class A{
+    int x = 5;
+    int y(){
+        x = 10;
+    }
+}
+{
+    A a = new A();
+
+    println(a.x);
+    println(a.y());
+    println(a.x);
+}
+        

@@ -1,0 +1,18 @@
+// @result ok
+// @result ok
+{
+	boolean x = !(0 < 2);
+	boolean y = !false;
+	
+	if (x) {
+		println("ko");
+	} else {
+		println("ok");
+	}
+	
+	if (y) {
+		println("ok");
+	} else {
+		println("ko");
+	}
+}

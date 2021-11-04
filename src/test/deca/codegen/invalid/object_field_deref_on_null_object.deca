@@ -1,0 +1,11 @@
+// @result Error: Cannot acces null object
+/*
+Testing for field acces on null object
+*/
+class X {
+	int a = 1;
+}
+{
+	X x;
+	println(x.a);
+}

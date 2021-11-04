@@ -1,0 +1,17 @@
+/*
+    Description : appel de méthode avec des paramètres sur un objet défini
+
+    Résultat : OK
+*/
+class A{
+    int x(int a, int b, int c){
+        return 5;
+    }
+}
+class B
+{
+    int i = 1;
+    int j = 7;
+    int k = 9;
+    int x = A.x(i, j, k);
+}

@@ -1,0 +1,25 @@
+// @result 60
+// @result 6
+/*
+    Description : Test sur la gestion de la règle "Si le code qui réalise les initialisations utilise des registres parmi R2, R3, . . ., ces registres devront être
+sauvegardés au début du sous-programme, et restaurés avant la sortie du sous-programme.", p212 du poly
+
+    Résultat: OK 
+
+*/
+class C {
+    int a = 1;
+    int b = 2;
+    int c = 3;
+    int e = 0;
+    int d = ((a*b)*(c))+e;
+}
+{
+    int w = 0;
+    int x = 10;
+    int y = 20;
+    int z = 30;
+    C p = new C();
+    println(((x+y)+(z))+w);
+    println(p.d);
+}

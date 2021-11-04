@@ -1,0 +1,27 @@
+// @result 1
+// @result 1.10000e+00
+// @result ok
+// @result ok
+/*
+Testing for field inheritance without redefinition
+*/
+class D {}
+class X {
+	int a = 1;
+	float b = 1.1;
+	boolean c = true;
+	D d = new D();
+}
+class Y extends X {}
+{
+	Y y = new Y();
+
+	println(y.a);
+	println(y.b);
+	if (y.c) {
+		println("ok");
+	}
+	if (y.d != null) {
+		println("ok");
+	}
+}

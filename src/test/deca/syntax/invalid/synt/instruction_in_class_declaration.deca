@@ -1,0 +1,9 @@
+/*
+    Description : Utilisation d'un println à l'intérieur d'une classe en dehors d'une méthode
+
+    Résultat: Erreur syntaxique (deca:7:4)
+*/
+class A{
+    println("A");
+}
+// @expected_output deca:7:4: mismatched input 'println' expecting {'extends', '{'}

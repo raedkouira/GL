@@ -1,0 +1,7 @@
+/*
+    Description : Extension d'une classe vide par une classe vide
+
+    Résultat : OK
+*/
+class A{}
+class B extends A{}

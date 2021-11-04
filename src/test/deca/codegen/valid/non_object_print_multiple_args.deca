@@ -1,0 +1,13 @@
+// @result Test ok !
+// @result Test réussi si Test ok ! est sur la meme ligne
+/*
+    Description : test de la faculté de la fonction print() à afficher plusieurs arguments
+
+    Résultat : à définir
+*/
+
+{
+    print("Te","st"," ","ok", " !");
+    println("");
+    println("Test réussi si Test ok ! est sur la meme ligne");
+}

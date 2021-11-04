@@ -1,0 +1,17 @@
+// @result 2
+// @result 2.20000e+00
+/*
+Test for field selection usage in arithmetic declarations
+*/
+class X {
+        int a = 1;
+        float b = 1.1;
+}
+{
+        X x = new X();
+	int a = 1 + x.a;
+	float b = 1.1 + x.b;
+
+	println(a);
+	println(b);
+}
